@@ -1,0 +1,63 @@
+@import "~scss/share";
+
+.loading-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 35%;
+  background-color: rgb(19, 19, 19);
+  box-sizing: border-box;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+.circle1,
+.circle2 {
+  stroke-width: 1;
+  stroke-linecap: round;
+  fill: none;
+}
+.circle1 {
+  // stroke: mix($color1, $bgc, 80);
+  stroke: url(#yellow);
+}
+.circle2 {
+  // stroke: mix($color0, $bgc, 80);
+  stroke: url(#yellow2);
+}
+
+text {
+  cursor: pointer;
+}
+
+.maintenance {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+  color: #fff;
+  background-color: rgb(19, 19, 19);
+}
+
+img {
+  @include noSelect;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 2em;
+}

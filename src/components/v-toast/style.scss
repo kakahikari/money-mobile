@@ -1,0 +1,50 @@
+@import "~scss/share";
+
+ol {
+  position: fixed;
+  right: 0;
+  bottom: 1em;
+  z-index: index($zIndex, over);
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  @include noSelect;
+  display: block;
+  max-width: 450px;
+  min-width: 200px;
+  padding: .5em 1em;
+  margin-bottom: .5em;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: mix($success, #fff, 20);
+  text-shadow: rgba(#000, .2) 1px 1px 1px;
+  white-space: normal;
+  cursor: default;
+  background: rgba($success, 1);
+  border-right: rgba(#fff, .6) solid .2em;
+  border-left: mix($success, #fff, 70) solid .2em;
+  &.warning {
+    color: mix($warning, #fff, 20);
+    background: rgba($warning, 1);
+    border-left-color: mix($warning, #fff, 70);
+  }
+  &.error {
+    color: mix($error, #fff, 20);
+    background-color: rgba($error, 1);
+    border-left-color: mix($error, #fff, 70);
+  }
+}
+
+.toast-move,
+.toast-enter-active,
+.toast-leave-active {
+  transition: all $transit;
+}
+.toast-enter,
+.toast-leave-to,
+.toast-leave-active {
+  opacity: 0;
+  transform: translateY(30px);
+}
