@@ -63,7 +63,7 @@ export const App = new Vue({
       return new Promise((resolve, reject) => {
         const params = {context: this, body: formData}
         this.$store.dispatch('login', params).then((res) => {
-          this.$root.showToast({content: this.i18n('成功')})
+          this.$root.showToast({content: this.i18n('success')})
           return resolve(res)
         }).catch((err) => {
           this.$root.showToast({type: 'warning', content: this.i18n(err)})
@@ -73,7 +73,7 @@ export const App = new Vue({
     },
     logout () {
       this.$store.dispatch('logout', {context: this})
-      this.$root.showToast({type: 'warning', content: this.i18n('已登出')})
+      this.$root.showToast({type: 'warning', content: this.i18n('logged out')})
       return this.default()
     },
     i18n (str, language = this.language) {

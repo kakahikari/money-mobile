@@ -1,5 +1,20 @@
 export default {
   'translation': {
+    'Register': '注册',
+    'Login': '登入',
+    'Logout': '登出',
+    'cancel': '取消',
+    'Account': '帐号',
+    'Password': '密码',
+    'Validation': '验证码',
+    'Submit': '送出',
+    'Forgot password?': '忘记密码?',
+    'Register for free': '免费注册',
+    'please check validation code': '请确认验证码',
+    'logged out': '已登出',
+    // page
+    'Index': '首页',
+    'login': '登入',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',

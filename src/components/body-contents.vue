@@ -7,6 +7,10 @@
 
 <script>
   export default {
-    name: 'body-contents'
+    name: 'body-contents',
+
+    created () {
+      this.$store.dispatch('checkStatus')
+    }
   }
 </script>
