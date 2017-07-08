@@ -1,0 +1,49 @@
+<template lang="pug">
+  section.main-menu
+    button.close-button(@click="close()")
+      icon(name="close" slot="icon")
+    button.translate-button(@click="translateBtnClick()")
+      icon(name="language" slot="icon")
+    login-panel
+    nav
+      router-link(":to"="{name: 'index'}")
+        mt-cell(":title"="$root.i18n('Index')")
+      mt-cell(title="電子遊戲")
+      mt-cell(title="優惠活動")
+      mt-cell(title="線上客服")
+      mt-cell(title="常見問題")
+      - for(var i = 0; i < 10; i++)
+        mt-cell(title="公告列表")
+    div
+      mt-cell(title="切換電腦版")
+</template>
+
+<script>
+  import Vue from 'vue'
+  import loginPanel from './login-panel'
+  import { Header, Cell, Actionsheet } from 'mint-ui'
+  Vue.component('mt-header', Header)
+  Vue.component('mt-cell', Cell)
+  Vue.component('mt-actionsheet', Actionsheet)
+
+  export default {
+    name: 'main-menu',
+
+    methods: {
+      close () {
+        this.$emit('closeBtnClick')
+      },
+      translateBtnClick () {
+        this.$emit('translateBtnClick')
+      }
+    },
+
+    components: {
+      loginPanel
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "./style";
+</style>

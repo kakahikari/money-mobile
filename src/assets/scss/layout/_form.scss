@@ -1,28 +1,31 @@
 input,
-select,
-button {
+select {
   @include pure;
   display: block;
   width: 100%;
   padding: $inputPadding;
+  background-color: $input_bgc;
+  border: $inputBorderWidth solid;
+  border-color: $input_border_color;
   border-radius: $globalBorderRadius;
   transition: all .3s;
 }
 
 button {
-  font-size: $fontSize * 1.1;
-  font-weight: normal;
-  line-height: 1.4em;
-  cursor: pointer;
-  border: $button_border_width solid;
-  border-color: $button_border_color;
-}
-
-input,
-select {
-  background-color: $input_bgc;
-  border: $inputBorderWidth solid;
-  border-color: $input_border_color;
+  &.form-button {
+    @include pure;
+    display: block;
+    width: 100%;
+    padding: $inputPadding;
+    font-size: $fontSize * 1.1;
+    font-weight: normal;
+    line-height: 1.4em;
+    cursor: pointer;
+    border: $button_border_width solid;
+    border-color: $button_border_color;
+    border-radius: $globalBorderRadius;
+    transition: all .3s;
+  }
 }
 
 table {

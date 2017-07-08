@@ -1,0 +1,25 @@
+@import "~scss/share";
+
+.mint-header {
+  line-height: 1.2em;
+  color: $reverse_color0;
+  background-color: $color0;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: index($zIndex, fixed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $layout_fixedHeight;
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    transform: translate3d(-50%, 0, 0);
+  }
+}

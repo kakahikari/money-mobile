@@ -1,0 +1,64 @@
+@import "~scss/share";
+
+.main-menu {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.translate-button,
+.close-button {
+  position: absolute;
+  top: .5em;
+  right: -.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $layout_fixedHeight - 1px;
+  height: $layout_fixedHeight - 1px;
+  color: $reverse_color0;
+  background: none;
+  border: 1px solid;
+  border-radius: 50%;
+  transform: translate3d(100%, 0, 0);
+  box-sizing: border-box;
+}
+
+.translate-button {
+  top: 1em;
+  transform: translate3d(100%, 100%, 0);
+}
+
+.login-panel {
+  padding: 10px;
+  color: $reverse_color0;
+  background-color: $color0;
+  a {
+    margin-right: .5em;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.user-info {
+  display: inline-flex;
+  flex-flow: column;
+  margin-right: 1em;
+  font-size: .8em;
+  vertical-align: middle;
+}
+
+.username,
+.wallet-sum {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wallet-sum {
+  span {
+    color: $money_color;
+  }
+}

@@ -12,6 +12,7 @@ export default {
     'Register for free': '免费注册',
     'please check validation code': '请确认验证码',
     'logged out': '已登出',
+    'Balance': '帐户余额',
     // page
     'Index': '首页',
     'login': '登入',

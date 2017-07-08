@@ -1,12 +1,11 @@
 <template lang="pug">
   section
-    - for(var i = 0; i < 100; i++)
-      div=i
+    div register
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'register'
 }
 </script>
 

@@ -30,6 +30,7 @@ Vue.config.productionTip = false
 // style
 import 'normalize.css/normalize.css'
 import 'scss/style.scss'
+import 'mint-ui/lib/style.css'
 
 /* eslint-disable no-new */
 export const App = new Vue({
@@ -45,9 +46,6 @@ export const App = new Vue({
     default () {
       this.$store.dispatch('ERASE_COOKIES')
       this.$router.replace({ path: '/' })
-    },
-    onReady () {
-      this.$store.dispatch('checkStatus')
     },
     init () {
       return new Promise((resolve, reject) => {
