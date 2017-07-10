@@ -51,3 +51,13 @@
     }
   }
 }
+
+.slideDown-enter-active,
+.slideDown-leave-active {
+  transform: translate3d(0, 0, 0);
+  transition: all $transit;
+}
+.slideDown-enter,
+.slideDown-leave-to {
+  transform: translate3d(0, 100%, 0);
+}

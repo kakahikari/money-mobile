@@ -1,7 +1,6 @@
 export default {
   'translation': {
     'Register': '注册',
-    'Login': '登入',
     'Logout': '登出',
     'cancel': '取消',
     'Account': '帐号',
@@ -13,9 +12,14 @@ export default {
     'please check validation code': '请确认验证码',
     'logged out': '已登出',
     'Balance': '帐户余额',
+    'Under Maintenance': '维护中',
     // page
     'Index': '首页',
-    'login': '登入',
+    'Login': '登入',
+    'Games': '游戏',
+    'Promotions': '优惠',
+    'Customer Service': '客服',
+    'My ACC': '帐户',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',
