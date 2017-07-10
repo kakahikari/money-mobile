@@ -2,7 +2,7 @@
   <div class="maintain-page">
     <aside class="maintenance" v-if="$store.state.AUTH.isOutOfOrderStatus">
       <img src="static/images/maintenance.png">
-      <h3>{{ $root.i18n('维护中') }}</h3>
+      <h3>{{ $root.i18n('Under Maintenance') }}</h3>
       <h3>{{ $store.state.AUTH.isOutOfOrderMSG }}</h3>
     </aside>
     <aside class="loading-svg" v-else>

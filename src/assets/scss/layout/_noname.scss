@@ -5,7 +5,6 @@
 html,
 body {
   width: 100%;
-  height: 100%;
   font-family: $fonts;
   @include breakpoint($box_width) {
     min-width: $box_width;
@@ -13,7 +12,7 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  min-height: calc(100vh - #{$layout_fixedHeight});
   font-size: $fontSize_tiny;
   color: $reverse_bgc;
   text-rendering: optimizeLegibility;
