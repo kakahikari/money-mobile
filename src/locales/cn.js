@@ -13,6 +13,13 @@ export default {
     'logged out': '已登出',
     'Balance': '帐户余额',
     'Under Maintenance': '维护中',
+    'Referral ID': '推荐人',
+    'Optional': '选填',
+    'Confirm PW': '确认密码',
+    'Reset': '重填',
+    'I agree to terms, and I am over 18 years old': '我已年满18岁并同意服务条款',
+    'Terms of service': '服务条款',
+    'please check terms of service': '请确认规则与条款',
     // page
     'Index': '首页',
     'Login': '登入',
@@ -20,6 +27,7 @@ export default {
     'Promotions': '优惠',
     'Customer Service': '客服',
     'My ACC': '帐户',
+    'Terms': '服务条款',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',

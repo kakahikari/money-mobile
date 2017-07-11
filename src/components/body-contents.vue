@@ -3,7 +3,7 @@
     body-header
     transition(name="slideDown")
       body-nav(v-if="bodyNavActive")
-    section.layout__container(":class"="{'body-nav--show': bodyNavActive}")
+    section.layout__container
       transition(name="fade" mode="out-in")
         router-view
 </template>

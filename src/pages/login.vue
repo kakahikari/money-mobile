@@ -1,22 +1,23 @@
 <template lang="pug">
-  section
-    .logo
+  section.form
+    .form__logo
       img(src="static/images/logo.png")
-    .form
+    .form__fields
       mt-field(":label"="$root.i18n('Account')" v-model="formData.username")
       mt-field(":label"="$root.i18n('Password')" type="password" v-model="formData.password")
       mt-field(":label"="$root.i18n('Validation')" v-model="formData.verification")
         v-verification(height="45px", width="88px", v-if="verification!=''" ":code"="verification")
-    .actions
-      mt-button.actions-btn(type="primary" plain @click="action()") {{ $root.i18n('Submit') }}
+    .form__actions
+      mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
       .mint-cell-wrapper
-        a.actions-link {{ $root.i18n('Forgot password?') }}
+        a.form__actions__link {{ $root.i18n('Forgot password?') }}
       .mint-cell-wrapper
-        router-link.actions-link(":to"="{name: 'Register'}") {{ $root.i18n('Register for free') }}
+        router-link.form__actions__link(":to"="{name: 'Register'}") {{ $root.i18n('Register for free') }}
           icon(name="keyboard_arrow_right")
 </template>
 
 <script>
+  import UserService from 'hq-money-services/userService'
   import vVerification from '@/components/form/v-verification'
   import Vue from 'vue'
   import { Field, Button, Indicator } from 'mint-ui'
@@ -54,7 +55,7 @@
         let rand = await Math.floor(Math.random() * 10000).toString()
         this.verification = rand
       },
-      action () {
+      action (formData) {
         if (this.formData.verification !== this.verification) return this.$root.showToast({type: 'warning', content: this.$root.i18n('please check validation code')})
 
         Indicator.open()
@@ -62,8 +63,9 @@
           this.init()
           Indicator.close()
           this.$router.push({name: 'index'})
-        }).catch(() => {
+        }).catch((err) => {
           Indicator.close()
+          this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
         })
       }
     },
@@ -73,7 +75,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  @import "./style";
-</style>

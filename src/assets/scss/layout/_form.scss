@@ -68,3 +68,34 @@ table {
     }
   }
 }
+
+.form__logo {
+  @include mid;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.form__fields {
+  padding: 1em;
+}
+
+.form__actions {
+  padding: 1em;
+}
+
+.form__actions__btn {
+  width: 100%;
+  margin-bottom: 1em;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.form__actions__link {
+  display: block;
+  line-height: 3em;
+  .material-icons {
+    font-size: 1em;
+    vertical-align: middle;
+  }
+}

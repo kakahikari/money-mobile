@@ -10,10 +10,7 @@
 }
 
 .layout__container {
-  padding-bottom: em(12);
-  &.body-nav--show {
-    padding-bottom: $layout_bottom_fixedHeight;
-  }
+  padding-bottom: $layout_bottom_fixedHeight;
   & > * {
     margin-bottom: em(12);
     &:last-child {
