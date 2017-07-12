@@ -61,3 +61,13 @@
 .slideDown-leave-to {
   transform: translate3d(0, 100%, 0);
 }
+
+.slideUp-enter-active,
+.slideUp-leave-active {
+  transform: translate3d(0, 0, 0);
+  transition: all $transit;
+}
+.slideUp-enter,
+.slideUp-leave-to {
+  transform: translate3d(0, -100%, 0);
+}

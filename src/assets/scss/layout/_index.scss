@@ -1,16 +1,18 @@
 @import "noname";
 @import "form";
 
-.whole-container {
-  //
-}
-
 .layout__viewport {
+  min-height: calc(100vh - #{$layout_fixedHeight});
   margin-top: $layout_fixedHeight;
+  transition: margin-top $transit;
+  &.marquee-active {
+    min-height: calc(100vh - #{$layout_fixedHeight * 2});
+    margin-top: $layout_fixedHeight * 2;
+  }
 }
 
 .layout__container {
-  padding-bottom: $layout_bottom_fixedHeight;
+  padding-bottom: em(12);
   & > * {
     margin-bottom: em(12);
     &:last-child {

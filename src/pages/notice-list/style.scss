@@ -1,0 +1,12 @@
+@import "~scss/share";
+
+.content {
+  position: relative;
+  z-index: index($zIndex, back);
+  padding: 10px;
+}
+
+.mint-cell {
+  position: relative;
+  z-index: index($zIndex, normal);
+}

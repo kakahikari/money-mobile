@@ -12,7 +12,6 @@ body {
 }
 
 body {
-  min-height: calc(100vh - #{$layout_fixedHeight});
   font-size: $fontSize_tiny;
   color: $reverse_bgc;
   text-rendering: optimizeLegibility;

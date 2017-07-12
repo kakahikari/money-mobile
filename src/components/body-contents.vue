@@ -1,6 +1,6 @@
 <template lang="pug">
-  section.layout__viewport
-    body-header
+  section.layout__viewport(":class"="{'marquee-active': marqueeActive}")
+    body-header(@marqueeToggle="marqueeToggle")
     transition(name="slideDown")
       body-nav(v-if="bodyNavActive")
     section.layout__container
@@ -17,7 +17,8 @@
 
     data () {
       return {
-        scrollY: 0
+        scrollY: 0,
+        marqueeActive: true
       }
     },
 
@@ -52,6 +53,9 @@
         this.onEvent()
         document.addEventListener('DOMContentLoaded', () => this.onEvent())
         document.addEventListener('scroll', () => this.onEvent())
+      },
+      marqueeToggle (val) {
+        this.marqueeActive = val
       }
     },
 

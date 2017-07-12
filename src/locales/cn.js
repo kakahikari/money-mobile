@@ -28,6 +28,7 @@ export default {
     'Customer Service': '客服',
     'My ACC': '帐户',
     'Terms': '服务条款',
+    'Notice-list': '公告列表',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',
