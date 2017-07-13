@@ -20,6 +20,7 @@ export default {
     'I agree to terms, and I am over 18 years old': '我已年满18岁并同意服务条款',
     'Terms of service': '服务条款',
     'please check terms of service': '请确认规则与条款',
+    'All': '全部',
     // page
     'Index': '首页',
     'Login': '登入',
@@ -29,6 +30,7 @@ export default {
     'My ACC': '帐户',
     'Terms': '服务条款',
     'Notice-list': '公告列表',
+    'Promotions-detail': '优惠内容',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',

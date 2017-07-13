@@ -1,0 +1,23 @@
+@import "~scss/share";
+
+.node__img {
+  width: 100%;
+}
+
+img {
+  &[lazy=loading] {
+    width: 100%;
+    height: 150px;
+    margin: auto;
+    background: $bgc;
+  }
+}
+
+.detail {
+  padding: 10px;
+}
+
+.detail__title {
+  margin-top: 0;
+  text-align: center;
+}
