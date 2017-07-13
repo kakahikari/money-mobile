@@ -3,8 +3,10 @@
     transition(name="slideUp")
       marquee(v-if="marqueeActive" @marqueeToggle="marqueeToggle()")
     mt-header(fixed ":title"="pageTitle" ":class"="{'marquee-active': marqueeActive}")
-      .header__bottom.menu(slot="left" @click="menuToogle()")
+      .header__buttom(v-if="!isLastPage" slot="left" @click="menuToogle()")
         icon(name="menu")
+      .header__buttom(v-else slot="left" @click="doBack()")
+        icon(name="chevron_left")
     .logo(v-if="$route.name == 'index'" ":class"="{'marquee-active': marqueeActive}")
       img(src="static/images/logo.png")
     mt-popup(position="left" v-model="menuActive")
@@ -35,7 +37,8 @@
         language: [
           { name: '中文', method: this.translate },
           { name: 'English', method: this.translate }
-        ]
+        ],
+        isLastPage: false
       }
     },
 
@@ -49,7 +52,12 @@
     watch: {
       '$route' (to, from) {
         this.menuToogle(false)
+        this.checkIsLastpage()
       }
+    },
+
+    created () {
+      this.checkIsLastpage()
     },
 
     methods: {
@@ -68,6 +76,12 @@
         if (val.name === 'English') this.$store.commit('SET_USER_LANGUAGE', 'en')
         else this.$store.commit('SET_USER_LANGUAGE', 'cn')
         this.menuToogle(false)
+      },
+      checkIsLastpage () {
+        this.isLastPage = this.$route.meta.isLastPage || false
+      },
+      doBack () {
+        this.$router.go(-1)
       }
     },
 
