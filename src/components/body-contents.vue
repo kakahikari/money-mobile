@@ -4,8 +4,7 @@
     transition(name="slideDown")
       body-nav(v-if="bodyNavActive")
     section.layout__container
-      transition(name="fade" mode="out-in")
-        router-view
+      router-view
 </template>
 
 <script>
@@ -24,7 +23,7 @@
 
     computed: {
       bodyNavActive () {
-        return (this.scrollY < 40)
+        return (this.scrollY < 40 && !this.$route.meta.noMenu)
       }
     },
 
