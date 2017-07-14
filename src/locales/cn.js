@@ -21,6 +21,8 @@ export default {
     'Terms of service': '服务条款',
     'please check terms of service': '请确认规则与条款',
     'All': '全部',
+    'Click to start game': '点击开始游戏',
+    'Platform balance': '平台餘額',
     // page
     'Index': '首页',
     'Login': '登入',

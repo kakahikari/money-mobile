@@ -1,6 +1,7 @@
 @import "~scss/share";
 
 .mint-header {
+  @include shadow;
   line-height: 1.2em;
   color: $reverse_color0;
   background-color: $color0;

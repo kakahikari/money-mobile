@@ -6,10 +6,7 @@
 </template>
 
 <script>
-  import Vue from 'vue'
   import { mapState } from 'vuex'
-  import { Lazyload } from 'mint-ui'
-  Vue.use(Lazyload)
 
   export default {
     name: 'promotions',

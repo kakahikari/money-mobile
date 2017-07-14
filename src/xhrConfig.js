@@ -1,6 +1,11 @@
 export const xhrTimeout = 15000
 export const LANGUAGE = 'cn'
 export const CURRENCY = 'RMB'
+export const GAMEGROUP = [
+  {name: 'Cypress', id: '23'},
+  {name: 'MG', id: '6'},
+  {name: 'BBIN', id: '18'}
+]
 
 export const errorCodes = {
   '0': 'success',
@@ -46,7 +51,8 @@ export const walletList = {
   '-1': 'System',
   '0': 'Center Wallet',
   '6': 'MG',
-  '12': 'CQ9',
+  '12': 'CQ9-GPS',
   '17': 'GT',
-  '18': 'BBin'
+  '18': 'BBin',
+  '23': 'CQ9'
 }

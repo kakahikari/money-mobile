@@ -23,6 +23,8 @@ import vToast from '@/components/v-toast'
 import VueFlatpickr from 'vue-flatpickr'
 import icon from '@/components/icon'
 Vue.component('icon', icon)
+import { Lazyload } from 'mint-ui'
+Vue.use(Lazyload)
 import maintainPage from '@/pages/maintain-page'
 
 Vue.config.productionTip = false
