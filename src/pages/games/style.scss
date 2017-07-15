@@ -39,35 +39,6 @@
   padding-top: $layout_fixedHeight;
 }
 
-.node {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 1 /3  * 100%;
-  padding: 10px;
-}
-
-.node__img {
-  img {
-    width: 100%;
-    &[lazy=loading] {
-      height: 80px;
-      margin: auto;
-      background: $bgc;
-    }
-  }
-}
-
-.node__name {
-  text-align: center;
-}
-
-.no-blank {
-  position: fixed;
-  z-index: index($zIndex, over);
-}
-
 .balance-bar {
   @include shadow;
   position: fixed;

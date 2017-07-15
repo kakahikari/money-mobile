@@ -1,0 +1,53 @@
+@import "~scss/share";
+
+.mint-swipe {
+  height: 200px;
+}
+.mint-swipe-item {
+  background-position: center;
+  background-size: cover;
+  img {
+    width: 100%;
+  }
+}
+.mint-swipe-indicator {
+  background: darken($color0, 3);
+  opacity: .7;
+  &.is-active {
+    background: $reverse_color0;
+  }
+}
+
+.game-hall {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game-hall__node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 1/4  * 100vw;
+  height: 1/4  * 100vw;
+  margin: 1/24  * 100vw;
+  border: 2px solid;
+  border-color: $color0;
+  border-radius: 50%;
+}
+
+.hot-games__legend {
+  padding: 1em 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $reverse_color0;
+  text-align: center;
+  background-color: $color0;
+}
+
+.hot-games__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

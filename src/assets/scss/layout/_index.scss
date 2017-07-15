@@ -21,6 +21,25 @@
   }
 }
 
+.no-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: index($zIndex, over);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 2em;
+  color: $reverse_color0;
+  background-color: rgba($color0, .5);
+  &:active,
+  &:hover {
+    color: $reverse_color0;
+  }
+}
+
 .serif {
   font-family: $serifFonts;
 }

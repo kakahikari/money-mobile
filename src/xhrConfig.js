@@ -6,6 +6,10 @@ export const GAMEGROUP = [
   {name: 'MG', id: '6'},
   {name: 'BBIN', id: '18'}
 ]
+export const HOTGAMES = {
+  groupId: '6',
+  length: 9
+}
 
 export const errorCodes = {
   '0': 'success',

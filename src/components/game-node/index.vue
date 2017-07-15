@@ -6,11 +6,12 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   import GameService from 'hq-money-services/gameService'
   import { Indicator } from 'mint-ui'
 
   export default {
-    name: 'games__node',
+    name: 'game-node',
 
     props: {
       name: { type: String },
@@ -19,11 +20,16 @@
       groupId: { type: String }
     },
 
+    computed: mapState({
+      language: state => state.USER.language
+    }),
+
     methods: {
       play () {
         let formData = {
           gameId: this.id,
-          groupId: this.groupId
+          groupId: this.groupId,
+          lang: this.language
         }
         Indicator.open()
         GameService.slotPlay({context: this, body: formData}).then((res) => {

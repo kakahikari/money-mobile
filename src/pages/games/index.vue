@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import node from './node'
+  import node from '@/components/game-node'
   import balanceBar from './balance-bar'
   import { mapState } from 'vuex'
   import { GAMEGROUP } from '@/xhrConfig'
@@ -59,10 +59,8 @@
       }
     },
 
-    mounted () {
-      this.$nextTick(() => {
-        this.fetch()
-      })
+    created () {
+      this.fetch()
     },
 
     methods: {

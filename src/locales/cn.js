@@ -23,6 +23,7 @@ export default {
     'All': '全部',
     'Click to start game': '点击开始游戏',
     'Platform balance': '平台餘額',
+    'Hot Games': '热门游戏',
     // page
     'Index': '首页',
     'Login': '登入',
