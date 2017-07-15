@@ -14,8 +14,8 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import { Swipe, SwipeItem } from 'mint-ui'
-  Vue.component('mt-swipe', Swipe)
-  Vue.component('mt-swipe-item', SwipeItem)
+  Vue.component(Swipe.name, Swipe)
+  Vue.component(SwipeItem.name, SwipeItem)
 
   export default {
     name: 'marquee',

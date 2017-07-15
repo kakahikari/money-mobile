@@ -21,8 +21,8 @@
   import vVerification from '@/components/form/v-verification'
   import Vue from 'vue'
   import { Field, Button, Indicator } from 'mint-ui'
-  Vue.component('mt-field', Field)
-  Vue.component('mt-button', Button)
+  Vue.component(Field.name, Field)
+  Vue.component(Button.name, Button)
 
   export default {
     name: 'login',

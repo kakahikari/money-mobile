@@ -45,7 +45,7 @@ export default {
       onload: false,
       score: 0,
       underScore: 0,
-      needScore: 6,
+      needScore: 4,
       result: {}
     }
   },
@@ -95,9 +95,7 @@ export default {
         this.setOutOfOrder(res)
         if (res.status === 0) throw res
         this.getUserInfo()
-        this.getServiceLink()
         this.getGameGroup()
-        this.getShowBoxes()
       }).catch((err) => {
         this.underScore += this.needScore
         this.setOutOfOrder(err)
@@ -118,27 +116,27 @@ export default {
         this.underScore++
       })
     },
-    getServiceLink () {
-      return this.$store.dispatch('getServiceLink', {context: this}).then((res) => {
-        return this.score++
-      }).catch(() => {
-        this.underScore++
-      })
-    },
+    // getServiceLink () {
+    //   return this.$store.dispatch('getServiceLink', {context: this}).then((res) => {
+    //     return this.score++
+    //   }).catch(() => {
+    //     this.underScore++
+    //   })
+    // },
     getGameGroup () {
       this.$store.dispatch('getGroup', {context: this}).then((res) => {
         return this.score++
       }).catch(() => {
         this.underScore++
       })
-    },
-    getShowBoxes () {
-      this.$store.dispatch('getBroadcasts', {context: this}).then((res) => {
-        return this.score++
-      }).catch(() => {
-        this.underScore++
-      })
     }
+    // getShowBoxes () {
+    //   this.$store.dispatch('getBroadcasts', {context: this}).then((res) => {
+    //     return this.score++
+    //   }).catch(() => {
+    //     this.underScore++
+    //   })
+    // }
   }
 }
 </script>

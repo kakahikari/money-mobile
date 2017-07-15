@@ -18,7 +18,7 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import { Button } from 'mint-ui'
-  Vue.component('mt-button', Button)
+  Vue.component(Button.name, Button)
 
   export default {
     name: 'login-panel',
@@ -28,6 +28,12 @@
       username: state => state.USER.username,
       walletSum: state => state.WALLET.sum
     }),
+
+    created () {
+      this.$store.dispatch('fetchWallets', {context: this}).catch((err) => {
+        this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
+      })
+    },
 
     methods: {
       logout () {

@@ -8,12 +8,14 @@
     nav
       router-link(":to"="{name: 'index'}")
         mt-cell(":title"="$root.i18n('Index')")
-      mt-cell(title="電子遊戲")
-      mt-cell(title="優惠活動")
+      router-link(":to"="{name: 'Games'}")
+        mt-cell(":title"="$root.i18n('Games')")
+      router-link(":to"="{name: 'Promotions'}")
+        mt-cell(":title"="$root.i18n('Promotions')")
       mt-cell(title="線上客服")
       mt-cell(title="常見問題")
-      - for(var i = 0; i < 10; i++)
-        mt-cell(title="公告列表")
+      router-link(":to"="{name: 'Notice-list'}")
+        mt-cell(":title"="$root.i18n('Notice-list')")
     div
       mt-cell(title="切換電腦版")
 </template>
@@ -22,9 +24,9 @@
   import Vue from 'vue'
   import loginPanel from './login-panel'
   import { Header, Cell, Actionsheet } from 'mint-ui'
-  Vue.component('mt-header', Header)
-  Vue.component('mt-cell', Cell)
-  Vue.component('mt-actionsheet', Actionsheet)
+  Vue.component(Header.name, Header)
+  Vue.component(Cell.name, Cell)
+  Vue.component(Actionsheet.name, Actionsheet)
 
   export default {
     name: 'main-menu',

@@ -23,9 +23,9 @@
   import vVerification from '@/components/form/v-verification'
   import Vue from 'vue'
   import { Field, Button, Checklist, Indicator } from 'mint-ui'
-  Vue.component('mt-field', Field)
-  Vue.component('mt-button', Button)
-  Vue.component('mt-checklist', Checklist)
+  Vue.component(Field.name, Field)
+  Vue.component(Button.name, Button)
+  Vue.component(Checklist.name, Checklist)
 
   export default {
     name: 'login',

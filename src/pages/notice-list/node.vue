@@ -10,7 +10,7 @@
 <script>
   import Vue from 'vue'
   import { Cell } from 'mint-ui'
-  Vue.component('mt-cell', Cell)
+  Vue.component(Cell.name, Cell)
 
   export default {
     name: 'notice-list__node',

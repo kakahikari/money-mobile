@@ -22,9 +22,9 @@
   import marquee from './marquee'
   import mainMenu from '@/components/main-menu'
   import { Header, Button, Popup } from 'mint-ui'
-  Vue.component('mt-header', Header)
-  Vue.component('mt-button', Button)
-  Vue.component('mt-popup', Popup)
+  Vue.component(Header.name, Header)
+  Vue.component(Button.name, Button)
+  Vue.component(Popup.name, Popup)
 
   export default {
     name: 'body-header',
