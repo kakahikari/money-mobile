@@ -35,7 +35,7 @@
   padding: 10px;
   color: $reverse_color0;
   background-color: $color0;
-  a {
+  .no-login {
     margin-right: .5em;
     &:last-of-type {
       margin-right: 0;
@@ -48,6 +48,7 @@
   flex-flow: column;
   margin-right: 1em;
   font-size: .8em;
+  text-decoration: none;
   vertical-align: middle;
 }
 

@@ -7,7 +7,7 @@ export const GAMEGROUP = [
   {name: 'BBIN', id: '18'}
 ]
 export const HOTGAMES = {
-  groupId: '6',
+  groupId: '23',
   length: 9
 }
 

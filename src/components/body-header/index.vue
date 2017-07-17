@@ -3,10 +3,12 @@
     transition(name="slideUp")
       marquee(v-if="marqueeActive" @marqueeToggle="marqueeToggle()")
     mt-header(fixed ":title"="pageTitle" ":class"="{'marquee-active': marqueeActive}")
-      .header__buttom(v-if="!isLastPage" slot="left" @click="menuToogle()")
+      .header__button(v-if="!isLastPage" slot="left" @click="menuToogle()")
         icon(name="menu")
-      .header__buttom(v-else slot="left" @click="doBack()")
+      .header__button(v-else slot="left" @click="doBack()")
         icon(name="chevron_left")
+      .header__button(slot="right")
+        mail-panel
     .logo(v-if="$route.name == 'index'" ":class"="{'marquee-active': marqueeActive}")
       img(src="static/images/logo.png")
     mt-popup(position="left" v-model="menuActive")
@@ -20,11 +22,13 @@
 <script>
   import Vue from 'vue'
   import marquee from './marquee'
+  import mailPanel from '@/components/mail-panel'
   import mainMenu from '@/components/main-menu'
-  import { Header, Button, Popup } from 'mint-ui'
+  import { Header, Button, Popup, Badge } from 'mint-ui'
   Vue.component(Header.name, Header)
   Vue.component(Button.name, Button)
   Vue.component(Popup.name, Popup)
+  Vue.component(Badge.name, Badge)
 
   export default {
     name: 'body-header',
@@ -87,6 +91,7 @@
 
     components: {
       marquee,
+      mailPanel,
       mainMenu
     }
   }

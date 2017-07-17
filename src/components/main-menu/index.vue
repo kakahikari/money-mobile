@@ -12,12 +12,15 @@
         mt-cell(":title"="$root.i18n('Games')")
       router-link(":to"="{name: 'Promotions'}")
         mt-cell(":title"="$root.i18n('Promotions')")
-      mt-cell(title="線上客服")
-      mt-cell(title="常見問題")
+      a
+        mt-cell(title="線上客服")
       router-link(":to"="{name: 'Notice-list'}")
         mt-cell(":title"="$root.i18n('Notice-list')")
+      a
+        mt-cell(title="常見問題")
     div
-      mt-cell(title="切換電腦版")
+      a
+        mt-cell(":title"="$root.i18n('Switch to desktop version')")
 </template>
 
 <script>
@@ -37,6 +40,9 @@
       },
       translateBtnClick () {
         this.$emit('translateBtnClick')
+      },
+      logout () {
+        this.$root.logout()
       }
     },
 

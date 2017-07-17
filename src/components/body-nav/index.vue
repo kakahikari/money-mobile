@@ -2,8 +2,8 @@
   nav.body-nav
     router-link.item(":to"="{name: 'index'}" ":class"="{cn: language === 'cn'}") {{ $root.i18n('Index') }}
     router-link.item(":to"="{name: 'Promotions'}" ":class"="{cn: language === 'cn'}") {{ $root.i18n('Promotions') }}
-    .item(":class"="{cn: language === 'cn'}") {{ $root.i18n('Customer Service') }}
-    .item(":class"="{cn: language === 'cn'}") {{ $root.i18n('My ACC') }}
+    a.item(":class"="{cn: language === 'cn'}") {{ $root.i18n('Customer Service') }}
+    router-link.item(":to"="{name: 'My-account'}" ":class"="{cn: language === 'cn'}") {{ $root.i18n('My ACC') }}
 </template>
 
 <script>
