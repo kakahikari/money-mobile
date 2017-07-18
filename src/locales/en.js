@@ -5,6 +5,8 @@ export default {
     'Notice-list': 'List of notices',
     'Promotions-detail': 'Promotions detail',
     'My-account': 'My account',
-    'Edit-profile': 'Edit profile'
+    'Edit-profile': 'Edit profile',
+    'Edit-password': 'Edit password',
+    'Edit-withdrawPW': 'Edit withdraw PW'
   }
 }

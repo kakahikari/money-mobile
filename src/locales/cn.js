@@ -45,6 +45,10 @@ export default {
     'Gender': '性别',
     'male': '男',
     'female': '女',
+    'New password': '新帐户密码',
+    'Check new password': '确认新密码',
+    'Withdraw PW': '取款密码',
+    'New withdraw PW': '新取款密码',
     // page
     'Index': '首页',
     'Login': '登入',
@@ -57,6 +61,8 @@ export default {
     'Promotions-detail': '优惠内容',
     'My-account': '我的帐户',
     'Edit-profile': '个人资料修改',
+    'Edit-password': '帐户密码修改',
+    'Edit-withdrawPW': '取款密码修改',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',

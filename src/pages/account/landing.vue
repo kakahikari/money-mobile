@@ -16,9 +16,9 @@
       h3 {{ $root.i18n('Security settings') }}
       mt-cell(":title"="$root.i18n('Edit profile')" is-link ":to"="{name: 'Edit-profile'}")
         icon(slot="icon" name="edit")
-      mt-cell(":title"="$root.i18n('Edit account password')" is-link)
+      mt-cell(":title"="$root.i18n('Edit account password')" is-link ":to"="{name: 'Edit-password'}")
         icon(slot="icon" name="lock")
-      mt-cell(":title"="$root.i18n('Edit withdraw password')" is-link)
+      mt-cell(":title"="$root.i18n('Edit withdraw password')" is-link ":to"="{name: 'Edit-withdrawPW'}")
         icon(slot="icon" name="attach_money")
     section
       div(@click="logout()")

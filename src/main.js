@@ -66,7 +66,7 @@ export const App = new Vue({
           this.$root.showToast({content: this.i18n('success')})
           return resolve(res)
         }).catch((err) => {
-          this.$root.showToast({type: 'warning', content: this.i18n(err)})
+          this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
           return reject(err)
         })
       })
