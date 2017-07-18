@@ -16,7 +16,8 @@ export const routes = [
         components: require('@/pages/account'),
         children:
         [
-          { path: '/', name: 'My-account', components: require('@/pages/account/landing'), meta: { requiresAuth: true } }
+          { path: '/', name: 'My-account', components: require('@/pages/account/landing'), meta: { requiresAuth: true } },
+          { path: 'edit-profile', name: 'Edit-profile', components: require('@/pages/account/edit-profile'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } }
         ]
       }
     ]

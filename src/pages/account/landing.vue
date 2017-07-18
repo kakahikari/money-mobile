@@ -14,7 +14,7 @@
         icon(slot="icon" name="history")
     section
       h3 {{ $root.i18n('Security settings') }}
-      mt-cell(":title"="$root.i18n('Edit profile')" is-link)
+      mt-cell(":title"="$root.i18n('Edit profile')" is-link ":to"="{name: 'Edit-profile'}")
         icon(slot="icon" name="edit")
       mt-cell(":title"="$root.i18n('Edit account password')" is-link)
         icon(slot="icon" name="lock")
@@ -27,14 +27,18 @@
 </template>
 
 <script>
-export default {
-  name: 'account__landing',
+  import Vue from 'vue'
+  import { Cell } from 'mint-ui'
+  Vue.component(Cell.name, Cell)
 
-  methods: {
-    logout () {
-      this.$root.logout()
+  export default {
+    name: 'account__landing',
+
+    methods: {
+      logout () {
+        this.$root.logout()
+      }
     }
-  }
 }
 </script>
 

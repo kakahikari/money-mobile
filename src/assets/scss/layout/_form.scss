@@ -9,6 +9,9 @@ select {
   border-color: $input_border_color;
   border-radius: $globalBorderRadius;
   transition: all .3s;
+  &[readonly=readonly] {
+    background-color: $bgc;
+  }
 }
 
 button {

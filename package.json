@@ -19,6 +19,7 @@
     "i18next": "^8.4.2",
     "material-design-icons": "^3.0.1",
     "mint-ui": "^2.2.7",
+    "moment": "^2.18.1",
     "numeral": "^2.0.6",
     "vue": "^2.3.4",
     "vue-flatpickr": "2.2.9",
