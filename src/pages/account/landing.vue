@@ -21,13 +21,20 @@
       mt-cell(":title"="$root.i18n('Edit withdraw password')" is-link)
         icon(slot="icon" name="attach_money")
     section
-      mt-cell(":title"="$root.i18n('Logout')" is-link)
-        icon(slot="icon" name="power_settings_new")
+      div(@click="logout()")
+        mt-cell(":title"="$root.i18n('Logout')" is-link)
+          icon(slot="icon" name="power_settings_new")
 </template>
 
 <script>
 export default {
-  name: 'account__landing'
+  name: 'account__landing',
+
+  methods: {
+    logout () {
+      this.$root.logout()
+    }
+  }
 }
 </script>
 
