@@ -7,7 +7,7 @@
         icon(name="menu")
       .header__button(v-else slot="left" @click="doBack()")
         icon(name="chevron_left")
-      .header__button(slot="right")
+      router-link.header__button(slot="right" ":to"="{name: 'Mails'}")
         mail-panel
     .logo(v-if="$route.name == 'index'" ":class"="{'marquee-active': marqueeActive}")
       img(src="static/images/logo.png")

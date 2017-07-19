@@ -23,7 +23,7 @@
 
     computed: mapState({
       authStatus: state => state.AUTH.status,
-      value: state => state.MAIL.list.length
+      value: state => state.MAIL.list.filter(node => node.status === '0').length
     }),
 
     created () {

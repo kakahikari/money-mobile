@@ -1,0 +1,55 @@
+@import "~scss/share";
+
+.mails-content {
+  padding-top: $layout_fixedHeight;
+}
+
+.node {
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: index($zIndex, back);
+  padding: 10px;
+}
+
+.time {
+  margin-bottom: .5em;
+  color: $color0;
+}
+
+.actions {
+  text-align: right;
+}
+
+.mint-cell {
+  position: relative;
+  z-index: index($zIndex, normal);
+}
+
+.mails-navbar {
+  @include shadow;
+  position: fixed;
+  left: 0;
+  z-index: index($zIndex, fixed);
+  display: flex;
+  width: 100%;
+  height: $layout_fixedHeight;
+  overflow-x: scroll;
+  background-color: #fff;
+}
+
+.mails-navbar-item {
+  display: block;
+  flex: 1;
+  height: $layout_fixedHeight;
+  margin: 0 5px;
+  line-height: $layout_fixedHeight;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  transition: border $transit;
+  &.active {
+    border-bottom-color: $color0;
+  }
+}

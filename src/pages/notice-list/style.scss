@@ -10,3 +10,7 @@
   position: relative;
   z-index: index($zIndex, normal);
 }
+
+.node {
+  overflow: hidden;
+}

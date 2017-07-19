@@ -2,6 +2,7 @@
 
 .mint-header {
   @include shadow;
+  z-index: index($zIndex, fixed);
   line-height: 1.2em;
   color: $reverse_color0;
   background-color: $color0;

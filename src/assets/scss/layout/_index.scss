@@ -43,3 +43,8 @@
 .serif {
   font-family: $serifFonts;
 }
+
+.mint-indicator {
+  position: relative;
+  z-index: index($zIndex, overlay);
+}

@@ -49,6 +49,12 @@ export default {
     'Check new password': '确认新密码',
     'Withdraw PW': '取款密码',
     'New withdraw PW': '新取款密码',
+    'Unread': '未读',
+    'Read': '已读',
+    'Delete': '删除',
+    'Confirm': '确认',
+    'Cancel': '取消',
+    'Are you sure?': '确定执行?',
     // page
     'Index': '首页',
     'Login': '登入',
@@ -63,6 +69,8 @@ export default {
     'Edit-profile': '个人资料修改',
     'Edit-password': '帐户密码修改',
     'Edit-withdrawPW': '取款密码修改',
+    'Mails': '站内信箱',
+    'Send time': '发送时间',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',
