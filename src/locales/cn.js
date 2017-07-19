@@ -55,6 +55,7 @@ export default {
     'Confirm': '确认',
     'Cancel': '取消',
     'Are you sure?': '确定执行?',
+    'Amount': '金额',
     // page
     'Index': '首页',
     'Login': '登入',
@@ -71,6 +72,8 @@ export default {
     'Edit-withdrawPW': '取款密码修改',
     'Mails': '站内信箱',
     'Send time': '发送时间',
+    'Transfer from': '转帐钱包',
+    'Transfer to': '目标钱包',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',

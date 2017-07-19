@@ -10,6 +10,48 @@
   }
 }
 
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.info__item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  background-color: $input_bgc;
+  border: 1px solid $bgc;
+  &.main {
+    position: relative;
+    z-index: index($zIndex, fixed);
+  }
+  &.gamegroup {
+    flex: 0;
+    width: 50%;
+    min-width: 50%;
+  }
+}
+
+.info__item__val {
+  &.money {
+    color: $money_color;
+  }
+}
+
+.info__item__icon {
+  position: absolute;
+  right: 10px;
+}
+
 h3 {
   margin-top: 0;
 }
