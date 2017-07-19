@@ -32,7 +32,7 @@
   border: 1px solid $bgc;
   &.main {
     position: relative;
-    z-index: index($zIndex, fixed);
+    z-index: index($zIndex, normal);
   }
   &.gamegroup {
     flex: 0;

@@ -17,7 +17,7 @@
         icon(slot="icon" name="input")
       mt-cell(":title"="$root.i18n('Withdraw')" is-link)
         icon(slot="icon" name="attach_money")
-      mt-cell(":title"="$root.i18n('Linking bank card')" is-link)
+      mt-cell(":title"="$root.i18n('Linking bank card')" is-link ":to"="{name: 'Bankcard'}")
         icon(slot="icon" name="credit_card")
       mt-cell(":title"="$root.i18n('History')" is-link)
         icon(slot="icon" name="history")
