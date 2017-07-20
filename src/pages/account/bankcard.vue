@@ -101,9 +101,13 @@
       fetchBankOpts () {
         Indicator.open()
         this.$store.dispatch('getBankOpts', {context: this}).then((res) => {
-          Indicator.close()
+          window.setTimeout(() => {
+            Indicator.close()
+          }, 100)
         }).catch((err) => {
-          Indicator.close()
+          window.setTimeout(() => {
+            Indicator.close()
+          }, 100)
           this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
         })
       },
