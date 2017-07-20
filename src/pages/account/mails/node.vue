@@ -32,7 +32,8 @@
       content: '',
       id: '',
       sendDate: '',
-      status: ''
+      status: '',
+      filter: ''
     },
 
     computed: {
@@ -45,6 +46,9 @@
     watch: {
       isActive (val) {
         if (val && this.status === '0') this.read()
+      },
+      filter () {
+        this.isActive = false
       }
     },
 

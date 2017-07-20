@@ -6,7 +6,7 @@
       .mails-navbar-item(":class"="{active: filter === 'read'}" @click="changeFilter('read')") {{ $root.i18n('Read') }}
     .mails-content
       template(v-for="node in list")
-        node(v-bind="node" @pop="fetch()")
+        node(v-bind="node" @pop="fetch()" ":filter"="filter")
 </template>
 
 <script>
