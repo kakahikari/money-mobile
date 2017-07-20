@@ -6,6 +6,7 @@
 
 .node {
   position: relative;
+  z-index: index($zIndex, normal);
   overflow: hidden;
 }
 
