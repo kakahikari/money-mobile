@@ -1,5 +1,35 @@
 @import "~scss/share";
 
+.promotions-navbar {
+  @include shadow;
+  position: fixed;
+  left: 0;
+  z-index: index($zIndex, fixed);
+  display: flex;
+  width: 100%;
+  height: $layout_fixedHeight;
+  overflow-x: scroll;
+  background-color: #fff;
+}
+
+.promotions-navbar-item {
+  display: block;
+  height: $layout_fixedHeight;
+  min-width: 1/4 * 100%;
+  margin: 0 5px;
+  line-height: $layout_fixedHeight;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  transition: border $transit;
+  &.active {
+    border-bottom-color: $color0;
+  }
+}
+
+.promotions-content {
+  padding-top: $layout_fixedHeight;
+}
+
 .node__img {
   width: 100%;
 }
