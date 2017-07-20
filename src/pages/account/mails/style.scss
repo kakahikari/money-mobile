@@ -5,12 +5,13 @@
 }
 
 .node {
+  position: relative;
   overflow: hidden;
 }
 
 .content {
   position: relative;
-  z-index: index($zIndex, back);
+  z-index: -1;
   padding: 10px;
 }
 
