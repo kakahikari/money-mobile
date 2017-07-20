@@ -1,5 +1,6 @@
 export default {
   'translation': {
+    'Order No': 'Order No.',
     // page
     'Terms': 'Terms of service',
     'Notice-list': 'List of notices',

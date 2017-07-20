@@ -66,6 +66,9 @@ export default {
     'Branch': '分行名称',
     'Confirm bank ACC': '确认银行帐户',
     'Please input bank name': '请输入银行名称',
+    'Deposit date': '转帐日期',
+    'Order No': '流水单号',
+    'No linking bank card?': '没有绑定银行卡?',
     // page
     'Index': '首页',
     'Login': '登入',

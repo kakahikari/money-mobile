@@ -13,9 +13,9 @@
       h3 {{ $root.i18n('Wallet center') }}
       mt-cell(":title"="$root.i18n('Transfer')" is-link ":to"="{name: 'Transfer'}")
         icon(slot="icon" name="compare_arrows")
-      mt-cell(":title"="$root.i18n('Deposit')" is-link)
+      mt-cell(":title"="$root.i18n('Deposit')" is-link ":to"="{name: 'Deposit'}")
         icon(slot="icon" name="input")
-      mt-cell(":title"="$root.i18n('Withdraw')" is-link)
+      mt-cell(":title"="$root.i18n('Withdraw')" is-link ":to"="{name: 'Withdraw'}")
         icon(slot="icon" name="attach_money")
       mt-cell(":title"="$root.i18n('Linking bank card')" is-link ":to"="{name: 'Bankcard'}")
         icon(slot="icon" name="credit_card")
