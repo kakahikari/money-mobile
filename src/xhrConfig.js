@@ -10,6 +10,7 @@ export const HOTGAMES = {
   groupId: '23',
   length: 9
 }
+export const SERVICELINK = 'https://tawk.to/chat/595c7e2de9c6d324a4738d9f/default/?$_tawk_popout=true'
 
 export const errorCodes = {
   '0': 'success',

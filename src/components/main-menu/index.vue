@@ -12,8 +12,8 @@
         mt-cell(":title"="$root.i18n('Games')")
       router-link(":to"="{name: 'Promotions'}")
         mt-cell(":title"="$root.i18n('Promotions')")
-      a
-        mt-cell(title="線上客服")
+      a(target="blank" ":href"="serviceLink")
+        mt-cell(":title"="$root.i18n('Customer Service')")
       router-link(":to"="{name: 'Notice-list'}")
         mt-cell(":title"="$root.i18n('Notice-list')")
       a
@@ -27,12 +27,19 @@
   import Vue from 'vue'
   import loginPanel from './login-panel'
   import { Header, Cell, Actionsheet } from 'mint-ui'
+  import { SERVICELINK } from '@/xhrConfig'
   Vue.component(Header.name, Header)
   Vue.component(Cell.name, Cell)
   Vue.component(Actionsheet.name, Actionsheet)
 
   export default {
     name: 'main-menu',
+
+    data () {
+      return {
+        serviceLink: SERVICELINK
+      }
+    },
 
     methods: {
       close () {

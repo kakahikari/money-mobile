@@ -2,7 +2,7 @@
   nav.body-nav
     router-link.item(":to"="{name: 'index'}" ":class"="{cn: language === 'cn'}") {{ $root.i18n('Index') }}
     router-link.item(":to"="{name: 'Promotions'}" ":class"="{cn: language === 'cn'}") {{ $root.i18n('Promotions') }}
-    a.item(":class"="{cn: language === 'cn'}") {{ $root.i18n('Customer Service') }}
+    a.item(target="blank" ":href"="serviceLink" ":class"="{cn: language === 'cn'}") {{ $root.i18n('Customer Service') }}
     template(v-if="authStatus == 1")
       router-link.item(":to"="{name: 'My-account'}" ":class"="{cn: language === 'cn'}") {{ $root.i18n('My ACC') }}
     template(v-else)
@@ -11,9 +11,16 @@
 
 <script>
   import { mapState } from 'vuex'
+  import { SERVICELINK } from '@/xhrConfig'
 
   export default {
     name: 'body-nav',
+
+    data () {
+      return {
+        serviceLink: SERVICELINK
+      }
+    },
 
     computed: mapState({
       authStatus: state => state.AUTH.status,
