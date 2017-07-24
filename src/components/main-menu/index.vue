@@ -16,11 +16,11 @@
         mt-cell(":title"="$root.i18n('Customer Service')")
       router-link(":to"="{name: 'Notice-list'}")
         mt-cell(":title"="$root.i18n('Notice-list')")
-      a
-        mt-cell(title="常見問題")
+      //- a
+      //-   mt-cell(title="常見問題")
     div
-      a
-        mt-cell(":title"="$root.i18n('Switch to desktop version')")
+      a(href="/")
+        mt-cell(":title"="$root.i18n('Switch to PC version')")
 </template>
 
 <script>

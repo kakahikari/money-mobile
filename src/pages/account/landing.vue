@@ -19,7 +19,7 @@
         icon(slot="icon" name="attach_money")
       mt-cell(":title"="$root.i18n('Linking bank card')" is-link ":to"="{name: 'Bankcard'}")
         icon(slot="icon" name="credit_card")
-      mt-cell(":title"="$root.i18n('History')" is-link)
+      mt-cell(":title"="$root.i18n('History')" is-link ":to"="{name: 'History'}")
         icon(slot="icon" name="history")
     section
       h3 {{ $root.i18n('Security settings') }}

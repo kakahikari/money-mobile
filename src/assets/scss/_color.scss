@@ -20,9 +20,11 @@ $button_border_color: $input_border_color;
 $main_font_color: #02051d;
 $main_font_color2: #5a720d;
 
-$table_th_text_color: $main_font_color;
-$table_text_color: $main_font_color;
-$table_border_color: $input_border_color;
+$table_th_text_color: #fff;
+$table_th_bgc: #014116;
+$table_bgc: #000;
+$table_text_color: #fff;
+$table_border_color: #757575;
 
 //- vToast
 $error: rgb(218, 52, 52);

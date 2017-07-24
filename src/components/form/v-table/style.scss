@@ -1,0 +1,88 @@
+@import "~scss/share";
+
+a {
+  color: $table_text_color;
+  &:active {
+    color: $table_text_color;
+  }
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table,
+th,
+td {
+  &:after {
+    display: none;
+  }
+}
+
+th {
+  font-size: .8em;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: $table_th_bgc;
+}
+
+tr {
+  background-color: $table_bgc;
+  &:nth-child(even) {
+    background-color: mix($table_th_bgc, $table_bgc, 50);
+  }
+}
+
+.material-icons {
+  font-size: 100%;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.amount {
+  color: $money_color;
+}
+
+th,
+td {
+  padding: .5em;
+  line-height: 1.2em;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  border-right: 1px solid $table_border_color;
+  &:last-of-type {
+    border-right: 0;
+  }
+}
+
+.error {
+  color: #ff6779;
+}
+
+.now-page {
+  color: $main-font-color2;
+}
+
+.total-page {
+  padding-top: 0;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.pager-item {
+  display: block;
+  min-width: 1em;
+  margin: 0 .5em;
+  text-decoration: none;
+}

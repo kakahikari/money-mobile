@@ -24,7 +24,8 @@ export const routes = [
           { path: 'deposit', name: 'Deposit', components: require('@/pages/account/deposit'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
           { path: 'withdraw', name: 'Withdraw', components: require('@/pages/account/withdraw'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresWithdrawPW: true } },
           { path: 'bankcard', name: 'Bankcard', components: require('@/pages/account/bankcard'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
-          { path: 'mails', name: 'Mails', components: require('@/pages/account/mails'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } }
+          { path: 'mails', name: 'Mails', components: require('@/pages/account/mails'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
+          { path: 'history', name: 'History', components: require('@/pages/account/history'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } }
         ]
       }
     ]

@@ -2,6 +2,7 @@ export default {
   'translation': {
     'Order No': 'Order No.',
     // page
+    'Index': 'Home',
     'Terms': 'Terms of service',
     'Notice-list': 'List of notices',
     'Promotions-detail': 'Promotions detail',

@@ -38,14 +38,14 @@ export const errorCodes = {
   '5005': 'please linking with bank card first',
   //
   'v-close': 'you are quitting the game',
-  'v-game-group-not-open': 'this game category has not been made available',
+  'v-game-group-not-open': 'this game platform has not been made available',
   'v-no-result': 'no data',
   'v-timeout': 'connection overtime',
   'v-need-withdrawPW': 'please set your withdrawal password',
   'v-need-profile': 'please setup your basic information',
   'v-no-token': 'login failed',
   'v-need-login': 'please login first',
-  'v-no-group': 'this game category not found',
+  'v-no-group': 'this game platform not found',
   //
   'http-0': 'API server not responding (ERR_CONNECTION_REFUSED)',
   'http-404': 'API server not responding',
