@@ -6,7 +6,7 @@
         .games-navbar-item(
           ":class"="{active: selectGroup.name === node.name.toLowerCase()}"
           @click="changeGroup(node.id)"
-        ) {{ node.name }}
+        ) {{ node.text }}
     .games-content
       template(v-for="node in list")
         node(v-bind="node" ":groupId"="selectGroup.id" @no-blank="gameStart")

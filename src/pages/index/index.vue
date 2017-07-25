@@ -7,7 +7,7 @@
         )
     section.game-hall
       template(v-for="node in gameGroup")
-        router-link.game-hall__node(":to"="{name: 'Games', query: {groupId: node.id}}") {{node.name}}
+        router-link.game-hall__node(":to"="{name: 'Games', query: {groupId: node.id}}") {{ node.text }}
     hotGames(v-bind="hotGames")
 </template>
 

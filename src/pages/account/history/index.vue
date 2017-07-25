@@ -17,7 +17,7 @@
             select.mint-field-core(v-model="platform")
               option(value="") {{ $root.i18n('please select') }}
               template(v-for="node in platformOptions")
-                option(":value"="node.id") {{ $root.i18n(node.name) }}
+                option(":value"="node.id") {{ node.text }}
       div(@click="openStartPicker()")
         mt-field(":label"="$root.i18n('Start date')" ":disabled"="true" v-model="formData.startDate")
       mt-datetime-picker(ref="sPicker" type="date" ":startDate"="startDate" ":endDate"="new Date()" @confirm="startDateChange")

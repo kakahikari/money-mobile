@@ -2,7 +2,7 @@ export const xhrTimeout = 15000
 export const LANGUAGE = 'cn'
 export const CURRENCY = 'RMB'
 export const GAMEGROUP = [
-  {name: 'Cypress', id: '23'}
+  { text: 'CQ9', name: 'Cypress', id: '23' }
 ]
 export const HOTGAMES = {
   groupId: '23',
