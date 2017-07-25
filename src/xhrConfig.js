@@ -9,6 +9,10 @@ export const HOTGAMES = {
   length: 9
 }
 export const SERVICELINK = 'https://tawk.to/chat/595c7e2de9c6d324a4738d9f/default/?$_tawk_popout=true'
+export const SITENAME = {
+  cn: '熊猫娱乐城',
+  en: 'PANDA'
+}
 
 export const errorCodes = {
   '0': 'success',

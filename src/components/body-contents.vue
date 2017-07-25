@@ -5,11 +5,13 @@
       body-nav(v-if="bodyNavActive")
     section.layout__container
       router-view
+    body-footer
 </template>
 
 <script>
   import bodyHeader from '@/components/body-header'
   import bodyNav from '@/components/body-nav'
+  import bodyFooter from '@/components/body-footer'
 
   export default {
     name: 'body-contents',
@@ -60,7 +62,8 @@
 
     components: {
       bodyHeader,
-      bodyNav
+      bodyNav,
+      bodyFooter
     }
   }
 </script>
