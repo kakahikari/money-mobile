@@ -1,6 +1,6 @@
 <template lang="pug">
   section.games
-    balance-bar(":balance"="balance")
+    balance-bar(":balance"="balance" v-if="authStatus == 1")
     .games-navbar
       template(v-for="node in gameGroup")
         .games-navbar-item(
@@ -47,7 +47,8 @@
         var target = state.WALLET.details.filter(node => node.id === this.selectGroup.id)
         if (target.length > 0) return target[0].balance
         return 0
-      }
+      },
+      authStatus: state => state.AUTH.status
     }),
 
     watch: {
