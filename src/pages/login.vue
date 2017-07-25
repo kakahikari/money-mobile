@@ -10,7 +10,7 @@
     .form__actions
       mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
       .mint-cell-wrapper
-        a.form__actions__link {{ $root.i18n('Forgot password?') }}
+        a.form__actions__link(":href"="serviceLink" target="blank") {{ $root.i18n('Forgot password?') }}
       .mint-cell-wrapper
         router-link.form__actions__link(":to"="{name: 'Register'}") {{ $root.i18n('Register for free') }}
           icon(name="keyboard_arrow_right")
@@ -20,6 +20,7 @@
   import UserService from 'hq-money-services/userService'
   import vVerification from '@/components/form/v-verification'
   import Vue from 'vue'
+  import { SERVICELINK } from '@/xhrConfig'
   import { Field, Button, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
@@ -34,7 +35,8 @@
           verification: '',
           username: '',
           password: ''
-        }
+        },
+        serviceLink: SERVICELINK
       }
     },
 
