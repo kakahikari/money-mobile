@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.form
+  section.form.edit
     .form__fields
       mt-field(":label"="$root.i18n('Account')" ":readonly"="true" v-model="formData.username")
       mt-field(":label"="$root.i18n('Name')" ":readonly"="!!user.playername" v-model="formData.playername")
@@ -15,8 +15,8 @@
         mt-field(":label"="$root.i18n('Birthday')" ":readonly"="true" v-model="formData.birthday")
       mt-datetime-picker(ref="picker" type="date" ":startDate"="new Date(1900, 0, 1)" ":endDate"="new Date()" @confirm="birthdayChange")
     .form__actions
-      mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-      mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+      mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+      mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
 </template>
 
 <script>
@@ -121,4 +121,7 @@
 
 <style lang="scss" scoped>
   @import "./style";
+  .edit {
+    padding-top: 10px;
+  }
 </style>

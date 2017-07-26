@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
   footer {
     padding: .5em 0;
     font-size: .75em;

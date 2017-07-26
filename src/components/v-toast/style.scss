@@ -3,7 +3,7 @@
 ol {
   position: fixed;
   right: 0;
-  bottom: $layout_bottom_fixedHeight;
+  bottom: calc(#{$layout_bottom_fixedHeight} - 1em);
   z-index: 9999;
   display: flex;
   flex-direction: column;

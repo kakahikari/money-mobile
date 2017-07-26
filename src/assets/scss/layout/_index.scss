@@ -1,5 +1,6 @@
 @import "noname";
 @import "form";
+@import "table";
 
 .layout__viewport {
   min-height: calc(100vh - #{$layout_fixedHeight});

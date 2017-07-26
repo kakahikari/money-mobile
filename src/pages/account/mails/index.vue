@@ -43,7 +43,7 @@
           Indicator.close()
         }).catch((err) => {
           Indicator.close()
-          this.$root.showToast({type: 'warning', content: err})
+          this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
         })
       },
       changeFilter (val) {

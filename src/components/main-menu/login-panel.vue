@@ -2,16 +2,17 @@
   .login-panel
     template(v-if="authStatus == 1")
       router-link.user-info(":to"="{name: 'My-account'}")
-        .username {{ $root.i18n('Account') }}:&nbsp;
+        .username
+          icon(name="account_circle")
           span {{ username }}
         .wallet-sum {{ $root.i18n('Balance') }}:&nbsp;
           span {{ walletSum.toString() | currency }}
-      mt-button(@click="logout()") {{ $root.i18n('Logout') }}
+      mt-button.logout(@click="logout()") {{ $root.i18n('Logout') }}
     template(v-else)
       router-link.no-login(":to"="{name: 'Register'}")
-        mt-button {{ $root.i18n('Register') }}
+        mt-button.register {{ $root.i18n('Register') }}
       router-link.no-login(":to"="{name: 'Login'}")
-        mt-button {{ $root.i18n('Login') }}
+        mt-button.login {{ $root.i18n('Login') }}
 </template>
 
 <script>

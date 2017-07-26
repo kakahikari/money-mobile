@@ -58,7 +58,7 @@
       },
       read () {
         MailService.read({context: this, body: {id: this.id}}).catch((err) => {
-          this.$root.showToast({type: 'warning', content: err})
+          this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
         })
       },
       pop () {
@@ -74,7 +74,7 @@
               this.$root.showToast({content: this.$root.i18n('success')})
               this.$emit('pop')
             }).catch((err) => {
-              this.$root.showToast({type: 'warning', content: err})
+              this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
             })
           }
         })

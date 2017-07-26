@@ -21,9 +21,13 @@
 .game-hall {
   display: flex;
   flex-wrap: wrap;
+  background-color: $light_color0;
+  background-image: linear-gradient(to top, $light_color0, $color0);
+
 }
 
 .game-hall__node {
+  @include lightRing;
   position: relative;
   display: flex;
   align-items: center;
@@ -32,12 +36,40 @@
   width: 1/4  * 100vw;
   height: 1/4  * 100vw;
   margin: 1/24  * 100vw;
+  font-size: 1.5em;
+  color: $reverse_color0;
+  text-decoration: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 80% auto;
   border: 2px solid;
-  border-color: $color0;
+  border-color: $reverse_color0;
   border-radius: 50%;
+  &.CQ9 {
+    @include retina {
+      background-image: url("~@/assets/images/logo-cq-9@3x.png");
+    }
+    font-size: 0;
+    background-image: url("~@/assets/images/logo-cq-9.png");
+  }
+  &.MG {
+    @include retina {
+      background-image: url("~@/assets/images/logo-mg@3x.png");
+    }
+    font-size: 0;
+    background-image: url("~@/assets/images/logo-mg.png");
+  }
+  &.BBIN {
+    @include retina {
+      background-image: url("~@/assets/images/logo-bbin@3x.png");
+    }
+    font-size: 0;
+    background-image: url("~@/assets/images/logo-bbin.png");
+  }
 }
 
 .hot-games__legend {
+  @include shadow;
   padding: 1em 0;
   margin-top: 0;
   margin-bottom: 0;

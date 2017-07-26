@@ -1,5 +1,5 @@
 <template lang="pug">
-section.form(v-if="withdrawPWChecked")
+section.form.edit(v-if="withdrawPWChecked")
   template(v-if="$store.state.AUTH.isWithdrawPW")
     .form__fields
       mt-field(":label"="$root.i18n('Withdraw PW')" type="password" v-model="formData.withdrawPW")
@@ -10,8 +10,8 @@ section.form(v-if="withdrawPWChecked")
       mt-field(":label"="$root.i18n('New withdraw PW')" type="password" v-model="formData.withdrawPW")
       mt-field(":label"="$root.i18n('Check new password')" type="password" v-model="formData.checkPW")
   .form__actions
-    mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-    mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+    mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+    mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
 </template>
 
 <script>
@@ -80,5 +80,8 @@ section.form(v-if="withdrawPWChecked")
   }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.edit {
+  padding-top: 10px;
+}
 </style>

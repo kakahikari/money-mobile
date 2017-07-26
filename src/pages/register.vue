@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.form
+  section.form.color
     .form__logo
       img(src="static/images/logo.png")
     .form__fields
@@ -10,12 +10,13 @@
       mt-field(":label"="$root.i18n('Validation')" v-model="formData.verification")
         v-verification(height="45px", width="88px", v-if="verification!=''" ":code"="verification")
       mt-checklist(":options"="options" v-model="terms")
-      .mint-cell-wrapper
-        router-link.form__actions__link(":to"="{name: 'Terms'}") {{ $root.i18n('Terms of service') }}
-          icon(name="keyboard_arrow_right")
+    .form__fields.no-border
+      .form__actions__link
+        router-link(":to"="{name: 'Terms'}") {{ $root.i18n('Terms of service') }}
+        icon(name="keyboard_arrow_right")
     .form__actions
-      mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-      mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+      mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+      mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
 </template>
 
 <script>

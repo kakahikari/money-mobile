@@ -25,6 +25,7 @@
   padding: 0 10px;
   color: $reverse_marquee_bgc;
   background-color: $marquee_bgc;
+  background-image: linear-gradient(to right, $marquee_bgc, $marquee_bgc2);
 }
 
 .marquee__content {
@@ -62,6 +63,7 @@
     top: 0;
     left: 50%;
     height: 100%;
+    padding: 4px 0;
     transform: translate3d(-50%, 0, 0);
   }
 }

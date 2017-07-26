@@ -43,7 +43,7 @@
   }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
   .mail-panel {
     position: relative;
   }

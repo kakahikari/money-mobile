@@ -9,7 +9,8 @@
   width: 100%;
   height: $layout_fixedHeight;
   overflow-x: scroll;
-  background-color: #fff;
+  color: $reverse_main_menu_bgc;
+  background-color: $main_menu_bgc;
 }
 
 .promotions-navbar-item {
@@ -19,10 +20,10 @@
   margin: 0 5px;
   line-height: $layout_fixedHeight;
   text-align: center;
-  border-bottom: 2px solid transparent;
+  border-bottom: 4px solid transparent;
   transition: border $transit;
   &.active {
-    border-bottom-color: $color0;
+    border-bottom-color: $light_color0;
   }
 }
 
@@ -48,6 +49,8 @@ img {
 }
 
 .detail__title {
+  padding-bottom: .5em;
   margin-top: 0;
   text-align: center;
+  border-bottom: 2px solid $form_fields_border_color;
 }

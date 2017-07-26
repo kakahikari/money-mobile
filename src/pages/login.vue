@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.form
+  section.form.color
     .form__logo
       img(src="static/images/logo.png")
     .form__fields
@@ -8,12 +8,12 @@
       mt-field(":label"="$root.i18n('Validation')" v-model="formData.verification")
         v-verification(height="45px", width="88px", v-if="verification!=''" ":code"="verification")
     .form__actions
-      mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-      .mint-cell-wrapper
-        a.form__actions__link(":href"="serviceLink" target="blank") {{ $root.i18n('Forgot password?') }}
-      .mint-cell-wrapper
-        router-link.form__actions__link(":to"="{name: 'Register'}") {{ $root.i18n('Register for free') }}
-          icon(name="keyboard_arrow_right")
+      mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+      .form__actions__link
+        a(":href"="serviceLink" target="blank") {{ $root.i18n('Forgot password?') }}
+      .form__actions__link
+        router-link(":to"="{name: 'Register'}") {{ $root.i18n('Register for free') }}
+        icon(name="keyboard_arrow_right")
 </template>
 
 <script>

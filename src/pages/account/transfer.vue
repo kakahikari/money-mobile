@@ -34,8 +34,8 @@
                 option(":value"="node.id") {{ walletList[node.id] }}
       mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
     .form__actions
-      mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-      mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+      mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+      mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
 </template>
 
 <script>

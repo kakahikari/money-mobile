@@ -18,7 +18,7 @@
 
 .time {
   margin-bottom: .5em;
-  color: $color0;
+  color: $input_placeholder;
 }
 
 .actions {
@@ -39,7 +39,8 @@
   width: 100%;
   height: $layout_fixedHeight;
   overflow-x: scroll;
-  background-color: #fff;
+  color: $reverse_body_nav_bgc;
+  background-color: $body_nav_bgc;
 }
 
 .mails-navbar-item {
@@ -49,9 +50,14 @@
   margin: 0 5px;
   line-height: $layout_fixedHeight;
   text-align: center;
-  border-bottom: 2px solid transparent;
+  border-bottom: 4px solid transparent;
   transition: border $transit;
   &.active {
-    border-bottom-color: $color0;
+    border-bottom-color: $light_color0;
   }
+}
+
+.mint-button {
+  color: $reverse_body_nav_bgc;
+  background-color: $body_nav_bgc;
 }

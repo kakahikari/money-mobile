@@ -11,8 +11,11 @@
 }
 
 .info {
+  position: relative;
+  z-index: index($zIndex, normal);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .row {
@@ -29,7 +32,8 @@
   justify-content: center;
   padding: 10px;
   background-color: $input_bgc;
-  border: 1px solid $bgc;
+  border: 2px solid $bgc;
+  border-radius: $form_fields_border_ridius;
   &.main {
     position: relative;
     z-index: index($zIndex, normal);
@@ -39,6 +43,10 @@
     width: 50%;
     min-width: 50%;
   }
+}
+
+.info__item__title {
+  color: $input_placeholder;
 }
 
 .info__item__val {
@@ -55,6 +63,7 @@
 
 h3 {
   margin-top: 0;
+  color: $input_placeholder;
 }
 
 .material-icons {

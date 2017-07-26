@@ -19,10 +19,11 @@
   justify-content: center;
   font-size: .8em;
   text-align: center;
-  border-top: 2px solid transparent;
-  transition: border $transit;
+  text-decoration: none;
+  transition: background-color $transit;
   &.active {
-    border-top-color: $color0;
+    color: $reverse_body_nav_bgc;
+    background-color: $color0;
   }
   &.cn {
     font-size: 18px;

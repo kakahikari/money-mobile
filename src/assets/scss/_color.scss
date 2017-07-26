@@ -1,18 +1,27 @@
 // ----- global color params
-$bgc: #e0e0e0;
-$reverse_bgc: #02051d;
+$bgc: #212121;
+$reverse_bgc: #fff;
 
-$color0: #003f1a;
+$color0: #014116;
+$light_color0: #b4ed50;
 $reverse_color0: #fff;
-$marquee_bgc: #01a928;
-$reverse_marquee_bgc: #fff;
-$money_color: #ffc107;
-$body_nav_bgc: #fff;
+$marquee_bgc: #ffc107;
+$marquee_bgc2: #f76b1c;
+$reverse_marquee_bgc: #212121;
 
-$input_color: #02051d;
-$input_bgc: #fff;
+$main_menu_bgc: $bgc;
+$reverse_main_menu_bgc: $reverse_bgc;
+
+$money_color: #ffc107;
+$body_nav_bgc: $bgc;
+$reverse_body_nav_bgc: $reverse_bgc;
+
+$form_fields_border_color: #7ed321;
+
+$input_color: #fff;
+$input_bgc: #000;
 $input_border_color: lighten(#000, 20);
-$input_placeholder: #888;
+$input_placeholder: #757575;
 
 $button_color: #02051d;
 $button_border_color: $input_border_color;

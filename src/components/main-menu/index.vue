@@ -8,6 +8,7 @@
     nav
       router-link(":to"="{name: 'index'}")
         mt-cell(":title"="$root.i18n('Index')")
+          icon(name="home")
       router-link(":to"="{name: 'Games'}")
         mt-cell(":title"="$root.i18n('Games')")
       router-link(":to"="{name: 'Promotions'}")

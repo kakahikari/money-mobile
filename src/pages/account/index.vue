@@ -8,6 +8,3 @@ export default {
   name: 'account'
 }
 </script>
-
-<style lang="css">
-</style>

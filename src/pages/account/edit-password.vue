@@ -1,12 +1,12 @@
 <template lang="pug">
-section.form
+section.form.edit
   .form__fields
     mt-field(":label"="$root.i18n('Password')" type="password" v-model="formData.password")
     mt-field(":label"="$root.i18n('New password')" type="password" v-model="formData.newPW")
     mt-field(":label"="$root.i18n('Check new password')" type="password" v-model="formData.checkPW")
   .form__actions
-    mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-    mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+    mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+    mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
 </template>
 
 <script>
@@ -52,5 +52,8 @@ section.form
   }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.edit {
+  padding-top: 10px;
+}
 </style>

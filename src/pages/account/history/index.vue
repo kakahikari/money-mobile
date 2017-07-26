@@ -25,8 +25,8 @@
         mt-field(":label"="$root.i18n('End date')" ":disabled"="true" v-model="formData.endDate")
       mt-datetime-picker(ref="ePicker" type="date" ":startDate"="startDate" ":endDate"="new Date()" @confirm="endDateChange")
     .form__actions
-      mt-button.form__actions__btn(type="primary" plain @click="action(formData, type)") {{ $root.i18n('Submit') }}
-      mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+      mt-button.form__actions__btn.submit(@click="action(formData, type)") {{ $root.i18n('Submit') }}
+      mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
     .form__result(v-if="isShowResult")
       v-table(":data"="list", ":columns"="columns", ":page-size"="10")
 </template>
@@ -236,5 +236,8 @@
   }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+  .history {
+    padding-top: 10px;
+  }
 </style>

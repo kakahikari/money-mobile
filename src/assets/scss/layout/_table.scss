@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+th {
+  font-size: .8em;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: $table_th_bgc;
+}
+
+tr {
+  background-color: $table_bgc;
+  &:nth-child(odd) {
+    background-color: mix($table_th_bgc, $table_bgc, 50);
+  }
+}
+
+th,
+td {
+  padding: .5em;
+  line-height: 1.2em;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  border-right: 1px solid $table_border_color;
+  &:last-of-type {
+    border-right: 0;
+  }
+}

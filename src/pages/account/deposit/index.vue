@@ -19,8 +19,8 @@
         router-link.form__actions__link(":to"="{name: 'Bankcard'}") {{ $root.i18n('No linking bank card?') }}
           icon(name="keyboard_arrow_right")
     .form__actions
-      mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-      mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+      mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+      mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
 </template>
 
 <script>
@@ -117,5 +117,8 @@
   }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+  .deposit {
+    padding-top: 10px;
+  }
 </style>

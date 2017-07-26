@@ -90,7 +90,9 @@
       },
       changeGroup (val) {
         this.$router.push({ query: { groupId: val } })
-        this.fetch()
+        window.setTimeout(() => {
+          this.fetch()
+        }, 100)
       },
       gameStart (res) {
         this.gameHref = res

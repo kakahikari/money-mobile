@@ -8,37 +8,31 @@
             icon(name="keyboard_arrow_down" v-if="bankListActive")
             icon(name="keyboard_arrow_up" v-else)
       transition(name="slideUp")
-        div(v-if="bankListActive")
-          .row
-            .info__item
-              .info__item__title {{ $root.i18n('Bank name') }}
-            .info__item
-              .info__item__val {{ $root.i18n('Bank account') }}
-            .info__item
-              .info__item__val {{ $root.i18n('Bank ACC name') }}
-          .row(v-for="node in bankList")
-            .info__item
-              .info__item__title {{ node.bankName }} {{ node.branch? `- ${node.branch}` : `` }}
-            .info__item
-              .info__item__val {{ node.account }}
-            .info__item
-              .info__item__val {{ node.name }}
-      .form__fields
-        .mint-cell.mint-field
-          .mint-cell-wrapper
-            .mint-cell-title
-              span.mint-cell-text {{ $root.i18n('Bank name') }}
-            .mint-cell-value
-              select.mint-field-core(v-model="bankName")
-                template(v-for="node in bankOpts")
-                  option(":value"="node.value") {{ node.name }}
-        mt-field(v-model="formData.bankName" v-if="bankName=='other'" ":placeholder"="$root.i18n('Please input bank name')")
-        mt-field(":label"="$root.i18n('Branch')" v-model="formData.branch")
-        mt-field(":label"="$root.i18n('Bank account')" v-model="formData.account")
-        mt-field(":label"="$root.i18n('Confirm bank ACC')" v-model="formData.checkAccount")
-      .form__actions
-        mt-button.form__actions__btn(type="primary" plain @click="action(formData)") {{ $root.i18n('Submit') }}
-        mt-button.form__actions__btn(plain @click="init()") {{ $root.i18n('Reset') }}
+        table(v-if="bankListActive")
+          tr
+            th {{ $root.i18n('Bank name') }}
+            th {{ $root.i18n('Bank account') }}
+            th {{ $root.i18n('Bank ACC name') }}
+          tr(v-for="node in bankList")
+            td {{ node.bankName }} {{ node.branch? `- ${node.branch}` : `` }}
+            td {{ node.account }}
+            td {{ node.name }}
+    .form__fields
+      .mint-cell.mint-field
+        .mint-cell-wrapper
+          .mint-cell-title
+            span.mint-cell-text {{ $root.i18n('Bank name') }}
+          .mint-cell-value
+            select.mint-field-core(v-model="bankName")
+              template(v-for="node in bankOpts")
+                option(":value"="node.value") {{ node.name }}
+      mt-field(v-model="formData.bankName" v-if="bankName=='other'" ":placeholder"="$root.i18n('Please input bank name')")
+      mt-field(":label"="$root.i18n('Branch')" v-model="formData.branch")
+      mt-field(":label"="$root.i18n('Bank account')" v-model="formData.account")
+      mt-field(":label"="$root.i18n('Confirm bank ACC')" v-model="formData.checkAccount")
+    .form__actions
+      mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+      mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
 </template>
 
 <script>
