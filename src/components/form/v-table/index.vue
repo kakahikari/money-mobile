@@ -32,6 +32,9 @@
                 {{ Number(nodes[key]).toString() | currency }}
               </span>
             </template>
+            <template v-else-if="key == 'from' || key == 'to'">
+              {{ $root.i18n(nodes[key]) }}
+            </template>
             <template v-else>
               {{ nodes[key] }}
             </template>
