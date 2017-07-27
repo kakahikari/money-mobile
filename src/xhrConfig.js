@@ -35,6 +35,7 @@ export const errorCodes = {
   '2006': 'withdrawal failed',
   '2007': 'withdrawal failed',
   '2008': 'one withdrawal remains incomplete',
+  '2009': 'the number of bank cards has reached the limit',
   '3001': 'failed to load settings',
   '4001': 'you are quitting the game',
   '5005': 'please linking with bank card first',

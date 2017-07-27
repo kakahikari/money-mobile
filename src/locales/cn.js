@@ -127,9 +127,10 @@ export default {
     'deposit failed': '存款失败',
     'withdrawal failed': '取款失败',
     'one withdrawal remains incomplete': '尚有一笔提款未完成',
+    'the number of bank cards has reached the limit': '银行卡绑定已达上限',
     'failed to load settings': '设定档读取失败',
     'you are quitting the game': '游戏关闭中',
-    'please linking with bank card first': '未设置银行卡，请联系客服人员',
+    'please linking with bank card first': '未设置银行卡',
     //
     'this game platform has not been made available': '该游戏群尚未开放',
     'no data': '查无资料',
