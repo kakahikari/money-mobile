@@ -11,9 +11,10 @@
                 option(":value"="node") {{ node.bankName }} - {{ node.account }}
       mt-field(":label"="$root.i18n('Withdraw PW')" type="password" v-model="formData.withdrawPW")
       mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
-      .mint-cell-wrapper
-        router-link.form__actions__link(":to"="{name: 'Bankcard'}") {{ $root.i18n('No linking bank card?') }}
-          icon(name="keyboard_arrow_right")
+    .form__fields.no-border
+      .form__actions__link
+        router-link(":to"="{name: 'Bankcard'}") {{ $root.i18n('No linking bank card?') }}
+        icon(name="keyboard_arrow_right")
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}

@@ -15,9 +15,10 @@
       mt-field(":label"="$root.i18n('Bank ACC name')" ":readonly"="true" v-model="formData.playername")
       mt-field(":label"="$root.i18n('Order No')" v-model="formData.orderNo")
       mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
-      .mint-cell-wrapper
-        router-link.form__actions__link(":to"="{name: 'Bankcard'}") {{ $root.i18n('No linking bank card?') }}
-          icon(name="keyboard_arrow_right")
+    .form__fields.no-border
+      .form__actions__link
+        router-link(":to"="{name: 'Bankcard'}") {{ $root.i18n('No linking bank card?') }}
+        icon(name="keyboard_arrow_right")
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
