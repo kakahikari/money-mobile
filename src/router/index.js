@@ -33,7 +33,7 @@ const profile = (to, from, next) => {
 
   if (to.meta.requiresProfile && !isProfileFilled) {
     if (ProfileFilledChcked) {
-      router.app.$root.showToast && router.app.$root.showToast({type: 'warning', content: errorCodes['v-need-profile']})
+      router.app.$root.showToast && router.app.$root.showToast({type: 'warning', content: router.app.$root.i18n(errorCodes['v-need-profile'])})
       return next({name: 'Edit-profile'})
     }
 
@@ -50,7 +50,7 @@ const withdrawPW = (to, from, next) => {
 
   if (to.meta.requiresWithdrawPW && !isWithdrawPW) {
     if (withdrawPWChecked) {
-      router.app.$root.showToast && router.app.$root.showToast({type: 'warning', content: errorCodes['v-need-withdrawPW']})
+      router.app.$root.showToast && router.app.$root.showToast({type: 'warning', content: router.app.$root.i18n(errorCodes['v-need-withdrawPW'])})
       return next({name: 'Edit-withdrawPW'})
     }
 
