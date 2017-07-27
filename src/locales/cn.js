@@ -142,6 +142,16 @@ export default {
     //
     'API server not responding (ERR_CONNECTION_REFUSED)': 'API 服务无回应 (ERR_CONNECTION_REFUSED)',
     'API server not responding': 'API 服务无回应',
-    'API connection error': 'API 服务连线错误'
+    'API connection error': 'API 服务连线错误',
+    // form-errors
+    'required': '必填',
+    'must be characters or numbers': '只可使用英文及数字',
+    'must be numbers': '只可使用数字',
+    'must be 4 numbers': '只可使用4位数字',
+    'must be lowercase': '只可使用小写',
+    'the character must have': '字数需有',
+    'please confirm again': '请再次确认',
+    'must be different': '必须不相同',
+    'must between': '必须介于'
   }
 }

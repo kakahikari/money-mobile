@@ -4,7 +4,11 @@
       img(src="static/images/logo.png")
     .form__fields
       mt-field(":label"="$root.i18n('Account')" v-model="formData.username")
+      form-errors(":errors"="$v.formData.username")
+        form-error(v-if="!$v.formData.username.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Password')" type="password" v-model="formData.password")
+      form-errors(":errors"="$v.formData.password")
+        form-error(v-if="!$v.formData.password.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Validation')" v-model="formData.verification")
         v-verification(height="45px", width="88px", v-if="verification!=''" ":code"="verification")
     .form__actions
@@ -17,9 +21,11 @@
 </template>
 
 <script>
-  import UserService from 'hq-money-services/userService'
   import vVerification from '@/components/form/v-verification'
   import Vue from 'vue'
+  import formErrors from '@/components/form-errors'
+  import formError from '@/components/form-errors/form-error'
+  import { username, password } from '@/validators/config'
   import { SERVICELINK } from '@/xhrConfig'
   import { Field, Button, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
@@ -58,6 +64,8 @@
         this.verification = rand
       },
       action (formData) {
+        this.$v.$touch()
+        if (this.$v.$error) return
         if (this.formData.verification !== this.verification) return this.$root.showToast({type: 'warning', content: this.$root.i18n('please check validation code')})
 
         Indicator.open()
@@ -73,7 +81,16 @@
     },
 
     components: {
-      vVerification
+      vVerification,
+      formErrors,
+      formError
+    },
+
+    validations: {
+      formData: {
+        username: username,
+        password: password
+      }
     }
   }
 </script>

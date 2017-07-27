@@ -3,7 +3,8 @@
     .form__fields
       div(@click="openPicker()")
         mt-field(":label"="$root.i18n('Deposit date')" ":disabled"="true" v-model="formData.dateTime")
-      mt-datetime-picker(ref="picker" type="date" ":startDate"="startDate" ":endDate"="new Date()" @confirm="dateTimeChange")
+      form-errors(":errors"="$v.formData.dateTime")
+      mt-datetime-picker(ref="picker" type="date" ":startDate"="startDate" ":endDate"="today" v-model="today" @confirm="dateTimeChange")
       .mint-cell.mint-field
         .mint-cell-wrapper
           .mint-cell-title
@@ -12,9 +13,13 @@
             select.mint-field-core(v-model="bank")
               template(v-for="node in bankList")
                 option(":value"="node") {{ node.bankName }} - {{ node.account }}
+      form-errors(":errors"="$v.bank")
       mt-field(":label"="$root.i18n('Bank ACC name')" ":readonly"="true" v-model="formData.playername")
       mt-field(":label"="$root.i18n('Order No')" v-model="formData.orderNo")
+      form-errors(":errors"="$v.formData.orderNo")
       mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
+      form-errors(":errors"="$v.formData.amount")
+        form-error(v-if="!$v.formData.amount.between") {{ $root.i18n('must between') }} 50 ~ 1,000,000
     .form__fields.no-border
       .form__actions__link
         router-link(":to"="{name: 'Bankcard'}") {{ $root.i18n('No linking bank card?') }}
@@ -29,6 +34,9 @@
   import moment from 'moment'
   import Vue from 'vue'
   import { mapState } from 'vuex'
+  import formErrors from '@/components/form-errors'
+  import formError from '@/components/form-errors/form-error'
+  import { bank, date, amount, orderNo } from '@/validators/config'
   import { Field, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
@@ -61,6 +69,9 @@
       },
       startDate: () => {
         return moment().subtract(1, 'years').toDate()
+      },
+      today: () => {
+        return moment().toDate()
       }
     }),
 
@@ -98,6 +109,9 @@
         }
       },
       action (formData) {
+        this.$v.$touch()
+        if (this.$v.$error) return
+
         Indicator.open()
         DepositService.ATM({context: this, body: formData}).then((res) => {
           Indicator.close()
@@ -113,6 +127,20 @@
       },
       dateTimeChange (val) {
         this.formData.dateTime = moment(val).format('YYYY-MM-DD')
+      }
+    },
+
+    components: {
+      formErrors,
+      formError
+    },
+
+    validations: {
+      bank: bank,
+      formData: {
+        dateTime: date,
+        amount: amount({min: 50, max: 1000000}),
+        orderNo: orderNo
       }
     }
   }

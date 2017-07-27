@@ -1,0 +1,11 @@
+@import "~scss/share";
+
+.form-errors {
+  margin-top: .3em;
+  font-size: .6em;
+  color: $input_error_color;
+}
+
+li {
+  list-style: circle;
+}

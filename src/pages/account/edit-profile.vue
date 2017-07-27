@@ -3,17 +3,21 @@
     .form__fields
       mt-field(":label"="$root.i18n('Account')" ":readonly"="true" v-model="formData.username")
       mt-field(":label"="$root.i18n('Name')" ":readonly"="!!user.playername" v-model="formData.playername")
+      form-errors(":errors"="$v.formData.playername")
     .form__fields
       mt-radio(":title"="$root.i18n('Gender')" ":options"="genderOptions" ":readonly"="!!user.gender" v-model="formData.gender")
     .form__fields
       mt-field(":label"="$root.i18n('E-mail')" ":readonly"="!!user.email" v-model="formData.email" type="email")
+      form-errors(":errors"="$v.formData.email")
       mt-field(":label"="$root.i18n('Mobile')" ":readonly"="!!user.mobile" v-model="formData.mobile" type="tel")
+      form-errors(":errors"="$v.formData.mobile")
       mt-field(":label"="$root.i18n('QQ')" ":readonly"="!!user.qq" v-model="formData.qq")
       mt-field(":label"="$root.i18n('Wechat')" ":readonly"="!!user.wechat" v-model="formData.wechat")
       mt-field(":label"="$root.i18n('Address')" ":readonly"="!!user.addr" v-model="formData.addr")
       div(@click="openPicker()")
         mt-field(":label"="$root.i18n('Birthday')" ":readonly"="true" v-model="formData.birthday")
-      mt-datetime-picker(ref="picker" type="date" ":startDate"="new Date(1900, 0, 1)" ":endDate"="new Date()" @confirm="birthdayChange")
+      form-errors(":errors"="$v.formData.birthday")
+      mt-datetime-picker(ref="picker" type="date" ":startDate"="new Date(1900, 0, 1)" ":endDate"="today" v-model="today" @confirm="birthdayChange")
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
@@ -24,6 +28,8 @@
   import moment from 'moment'
   import Vue from 'vue'
   import { mapState } from 'vuex'
+  import formErrors from '@/components/form-errors'
+  import { playerName, date, checkEmail, mobile } from '@/validators/config'
   import { Field, Radio, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Radio.name, Radio)
@@ -51,7 +57,7 @@
     },
 
     computed: mapState({
-      user: function (state) {
+      user: state => {
         return state.USER
       },
       genderOptions: function () {
@@ -59,6 +65,9 @@
           { label: this.$root.i18n('male'), value: '0', disabled: this.user.gender !== '' },
           { label: this.$root.i18n('female'), value: '1', disabled: this.user.gender !== '' }
         ]
+      },
+      today: () => {
+        return moment().toDate()
       }
     }),
 
@@ -99,6 +108,9 @@
         }
       },
       action (formData) {
+        this.$v.$touch()
+        if (this.$v.$error) return
+
         Indicator.open()
         UserService.update({context: this, body: formData}).then((res) => {
           Indicator.close()
@@ -114,6 +126,19 @@
       },
       birthdayChange (val) {
         this.formData.birthday = moment(val).format('YYYY-MM-DD')
+      }
+    },
+
+    components: {
+      formErrors
+    },
+
+    validations: {
+      formData: {
+        playername: playerName,
+        email: checkEmail,
+        mobile,
+        birthday: date
       }
     }
   }

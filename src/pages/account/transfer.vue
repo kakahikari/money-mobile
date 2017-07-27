@@ -23,6 +23,7 @@
               option(":value"="centerWallet.id") {{ $root.i18n(walletList[centerWallet.id]) }}
               template(v-for="node in walletDetails")
                 option(":value"="node.id") {{ walletList[node.id] }}
+      form-errors(":errors"="$v.formData.from")
       .mint-cell.mint-field
         .mint-cell-wrapper
           .mint-cell-title
@@ -32,7 +33,10 @@
               option(":value"="centerWallet.id") {{ $root.i18n(walletList[centerWallet.id]) }}
               template(v-for="node in walletDetails")
                 option(":value"="node.id") {{ walletList[node.id] }}
+      form-errors(":errors"="$v.formData.to")
       mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
+      form-errors(":errors"="$v.formData.amount")
+        form-error(v-if="!$v.formData.amount.between") {{ $root.i18n('must between') }} 0 ~ 1,000,000
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
@@ -42,6 +46,9 @@
   import WalletService from 'hq-money-services/walletService'
   import Vue from 'vue'
   import { mapState } from 'vuex'
+  import formErrors from '@/components/form-errors'
+  import formError from '@/components/form-errors/form-error'
+  import { from, amount, to } from '@/validators/config'
   import { Field, Button, Indicator } from 'mint-ui'
   import { walletList } from '@/xhrConfig'
   Vue.component(Field.name, Field)
@@ -98,6 +105,9 @@
         }
       },
       action (formData) {
+        this.$v.$touch()
+        if (this.$v.$error) return
+
         Indicator.open()
         WalletService.transfer({context: this, body: formData}).then((res) => {
           Indicator.close()
@@ -111,6 +121,19 @@
       },
       toogleWalletDetails () {
         this.walletDetailsActive = !this.walletDetailsActive
+      }
+    },
+
+    components: {
+      formErrors,
+      formError
+    },
+
+    validations: {
+      formData: {
+        from: from,
+        amount: amount({min: 0, max: 1000000}),
+        to: to
       }
     }
   }

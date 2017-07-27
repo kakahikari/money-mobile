@@ -5,8 +5,13 @@
     .form__fields
       mt-field(":label"="$root.i18n('Referral ID')" v-model="formData.recommender" ":placeholder"="$root.i18n('Optional')")
       mt-field(":label"="$root.i18n('Account')" v-model="formData.username")
+      form-errors(":errors"="$v.formData.username")
+        form-error(v-if="!$v.formData.username.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Password')" type="password" v-model="formData.password")
+      form-errors(":errors"="$v.formData.password")
+        form-error(v-if="!$v.formData.password.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Confirm PW')" type="password" v-model="formData.checkPW")
+      form-errors(":errors"="$v.formData.checkPW")
       mt-field(":label"="$root.i18n('Validation')" v-model="formData.verification")
         v-verification(height="45px", width="88px", v-if="verification!=''" ":code"="verification")
       mt-checklist(":options"="options" v-model="terms")
@@ -23,6 +28,9 @@
   import UserService from 'hq-money-services/userService'
   import vVerification from '@/components/form/v-verification'
   import Vue from 'vue'
+  import formErrors from '@/components/form-errors'
+  import formError from '@/components/form-errors/form-error'
+  import { username, password, checkPW } from '@/validators/config'
   import { Field, Button, Checklist, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
@@ -78,6 +86,8 @@
         this.verification = rand
       },
       action (formData) {
+        this.$v.$touch()
+        if (this.$v.$error) return
         if (this.formData.verification !== this.verification) return this.$root.showToast({type: 'warning', content: this.$root.i18n('please check validation code')})
         if (!this.agree) return this.$root.showToast({type: 'warning', content: this.$root.i18n('please check terms of service')})
 
@@ -100,7 +110,17 @@
     },
 
     components: {
+      formErrors,
+      formError,
       vVerification
+    },
+
+    validations: {
+      formData: {
+        username: username,
+        password: password,
+        checkPW: checkPW('password')
+      }
     }
   }
 </script>

@@ -1,9 +1,9 @@
 <template lang="pug">
-section.form.edit
+.update
   .form__fields
-    mt-field(":label"="$root.i18n('Password')" type="password" v-model="formData.password")
-    form-errors(":errors"="$v.formData.password")
-    mt-field(":label"="$root.i18n('New password')" type="password" v-model="formData.newPW")
+    mt-field(":label"="$root.i18n('Withdraw PW')" type="password" v-model="formData.withdrawPW")
+    form-errors(":errors"="$v.formData.withdrawPW")
+    mt-field(":label"="$root.i18n('New withdraw PW')" type="password" v-model="formData.newPW")
     form-errors(":errors"="$v.formData.newPW")
     mt-field(":label"="$root.i18n('Check new password')" type="password" v-model="formData.checkPW")
     form-errors(":errors"="$v.formData.checkPW")
@@ -16,18 +16,18 @@ section.form.edit
   import UserService from 'hq-money-services/userService'
   import Vue from 'vue'
   import formErrors from '@/components/form-errors'
-  import { password, checkPW } from '@/validators/config'
+  import { withdrawPW, checkPW } from '@/validators/config'
   import { Field, Button, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
 
   export default {
-    name: 'account__edit-password',
+    name: 'edit-withdrawPW__update',
 
     data () {
       return {
         formData: {
-          password: '',
+          withdrawPW: '',
           newPW: '',
           checkPW: ''
         }
@@ -37,7 +37,7 @@ section.form.edit
     methods: {
       init () {
         this.formData = {
-          password: '',
+          withdrawPW: '',
           newPW: '',
           checkPW: ''
         }
@@ -47,10 +47,10 @@ section.form.edit
         if (this.$v.$error) return
 
         Indicator.open()
-        UserService.update_pw({context: this, body: formData}).then((res) => {
+        UserService.update_withdrawPW({context: this, body: formData}).then((res) => {
           Indicator.close()
           this.$root.showToast({content: this.$root.i18n('success')})
-          this.$root.logout()
+          this.init()
         }).catch((err) => {
           Indicator.close()
           this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
@@ -64,16 +64,10 @@ section.form.edit
 
     validations: {
       formData: {
-        password: password,
-        newPW: password,
+        withdrawPW,
+        newPW: withdrawPW,
         checkPW: checkPW('newPW')
       }
     }
   }
 </script>
-
-<style lang="css" scoped>
-.edit {
-  padding-top: 10px;
-}
-</style>

@@ -27,9 +27,13 @@
               template(v-for="node in bankOpts")
                 option(":value"="node.value") {{ node.name }}
       mt-field(v-model="formData.bankName" v-if="bankName=='other'" ":placeholder"="$root.i18n('Please input bank name')")
+      form-errors(":errors"="$v.formData.bankName")
       mt-field(":label"="$root.i18n('Branch')" v-model="formData.branch")
+      form-errors(":errors"="$v.formData.branch")
       mt-field(":label"="$root.i18n('Bank account')" v-model="formData.account")
+      form-errors(":errors"="$v.formData.account")
       mt-field(":label"="$root.i18n('Confirm bank ACC')" v-model="formData.checkAccount")
+      form-errors(":errors"="$v.formData.checkAccount")
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
@@ -39,6 +43,8 @@
   import WalletService from 'hq-money-services/walletService'
   import Vue from 'vue'
   import { mapState } from 'vuex'
+  import formErrors from '@/components/form-errors'
+  import { bankName, branch, account, checkPW } from '@/validators/config'
   import { Field, Button, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
@@ -116,6 +122,9 @@
         }
       },
       action (formData) {
+        this.$v.$touch()
+        if (this.$v.$error) return
+
         Indicator.open()
         WalletService.create_bank({context: this, body: formData}).then((res) => {
           Indicator.close()
@@ -129,6 +138,19 @@
       },
       toogleBankList () {
         this.bankListActive = !this.bankListActive
+      }
+    },
+
+    components: {
+      formErrors
+    },
+
+    validations: {
+      formData: {
+        bankName,
+        branch,
+        account,
+        checkAccount: checkPW('account')
       }
     }
   }

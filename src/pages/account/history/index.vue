@@ -9,21 +9,25 @@
             select.mint-field-core(v-model="type")
               template(v-for="node in options")
                 option(":value"="node.value") {{ $root.i18n(node.text) }}
-      .mint-cell.mint-field(v-if="type === 'bet'")
-        .mint-cell-wrapper
-          .mint-cell-title
-            span.mint-cell-text {{ $root.i18n('Platform') }}
-          .mint-cell-value
-            select.mint-field-core(v-model="platform")
-              option(value="") {{ $root.i18n('please select') }}
-              template(v-for="node in platformOptions")
-                option(":value"="node.id") {{ node.text }}
+      template(v-if="type === 'bet'")
+        .mint-cell.mint-field
+          .mint-cell-wrapper
+            .mint-cell-title
+              span.mint-cell-text {{ $root.i18n('Platform') }}
+            .mint-cell-value
+              select.mint-field-core(v-model="platform")
+                option(value="") {{ $root.i18n('please select') }}
+                template(v-for="node in platformOptions")
+                  option(":value"="node.id") {{ node.text }}
+        form-errors(":errors"="$v.platform")
       div(@click="openStartPicker()")
         mt-field(":label"="$root.i18n('Start date')" ":disabled"="true" v-model="formData.startDate")
-      mt-datetime-picker(ref="sPicker" type="date" ":startDate"="startDate" ":endDate"="new Date()" @confirm="startDateChange")
+      form-errors(":errors"="$v.formData.startDate")
+      mt-datetime-picker(ref="sPicker" type="date" ":startDate"="startDate" ":endDate"="today" v-model="today" @confirm="startDateChange")
       div(@click="openEndPicker()")
         mt-field(":label"="$root.i18n('End date')" ":disabled"="true" v-model="formData.endDate")
-      mt-datetime-picker(ref="ePicker" type="date" ":startDate"="startDate" ":endDate"="new Date()" @confirm="endDateChange")
+      form-errors(":errors"="$v.formData.endDate")
+      mt-datetime-picker(ref="ePicker" type="date" ":startDate"="startDate" ":endDate"="today" v-model="today" @confirm="endDateChange")
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData, type)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
@@ -35,6 +39,8 @@
   import HistoryService from 'hq-money-services/historyService'
   import moment from 'moment'
   import Vue from 'vue'
+  import formErrors from '@/components/form-errors'
+  import { date, platform } from '@/validators/config'
   import vTable from '@/components/form/v-table'
   import { GAMEGROUP } from '@/xhrConfig'
   import { Field, Button, DatetimePicker, Indicator } from 'mint-ui'
@@ -71,6 +77,9 @@
     computed: {
       startDate: () => {
         return moment().subtract(1, 'years').toDate()
+      },
+      today: () => {
+        return moment().toDate()
       }
     },
 
@@ -87,6 +96,9 @@
         }
       },
       action (formData, type) {
+        this.$v.formData.$touch()
+        if (this.$v.formData.$error) return
+
         switch (type) {
           case 'deposit':
             this.fecthDeposit(formData)
@@ -101,6 +113,8 @@
             this.fecthLogin(formData)
             break
           case 'bet':
+            this.$v.platform.$touch()
+            if (this.$v.platform.$error) return
             this.fecthBet(formData)
             break
           case '':
@@ -231,7 +245,16 @@
     },
 
     components: {
+      formErrors,
       vTable
+    },
+
+    validations: {
+      platform: platform,
+      formData: {
+        startDate: date,
+        endDate: date
+      }
     }
   }
 </script>
