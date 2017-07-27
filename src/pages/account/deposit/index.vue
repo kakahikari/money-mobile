@@ -68,7 +68,7 @@
       bank (newVal) {
         if (newVal !== undefined) {
           this.formData.bankName = newVal.bankName
-          this.formData.playername = newVal.playername
+          this.formData.playername = newVal.name
           this.formData.account = newVal.account
         }
       }
