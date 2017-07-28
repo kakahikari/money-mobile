@@ -4,6 +4,7 @@
       mt-field(":label"="$root.i18n('Account')" ":readonly"="true" v-model="formData.username")
       mt-field(":label"="$root.i18n('Name')" ":readonly"="!!user.playername" v-model="formData.playername")
       form-errors(":errors"="$v.formData.playername")
+        form-error(v-if="!$v.formData.playername.lengthSize") {{ $root.i18n('the character must have') }} 2 ~ 5
     .form__fields
       mt-radio(":title"="$root.i18n('Gender')" ":options"="genderOptions" ":readonly"="!!user.gender" v-model="formData.gender")
     .form__fields
@@ -29,6 +30,7 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import formErrors from '@/components/form-errors'
+  import formError from '@/components/form-errors/form-error'
   import { playerName, date, checkEmail, mobile } from '@/validators/config'
   import { Field, Radio, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
@@ -130,7 +132,8 @@
     },
 
     components: {
-      formErrors
+      formErrors,
+      formError
     },
 
     validations: {

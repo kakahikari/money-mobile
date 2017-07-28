@@ -7,6 +7,8 @@
     form-error(v-if="typeof(errors.lowerCaseOnly) !== 'undefined' && !errors.lowerCaseOnly") {{ $root.i18n('must be lowercase') }}
     form-error(v-if="typeof(errors.sameAsPassword) !== 'undefined' && !errors.sameAsPassword") {{ $root.i18n('please confirm again') }}
     form-error(v-if="typeof(errors.differentFrom) !== 'undefined' && !errors.differentFrom") {{ $root.i18n('must be different') }}
+    form-error(v-if="typeof(errors.chineseOnly) !== 'undefined' && !errors.chineseOnly") {{ $root.i18n('must be chinese characters') }}
+    form-error(v-if="typeof(errors.chineseMobile) !== 'undefined' && !errors.chineseMobile") {{ $root.i18n('mobile format error') }}
     slot
 </template>
 

@@ -153,6 +153,8 @@ export default {
     'the character must have': '字数需有',
     'please confirm again': '请再次确认',
     'must be different': '必须不相同',
-    'must between': '必须介于'
+    'must between': '必须介于',
+    'must be chinese characters': '只可使用中文字',
+    'mobile format error': '手机格式错误'
   }
 }

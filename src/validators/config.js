@@ -32,14 +32,14 @@ export const checkEmail = {
 export const playerName = {
   required,
   // alpha: regEx(/^[a-zA-Z\s]+$/)
-  // chineseOnly: regEx(/[\u4e00-\u9fa5]$/),
-  lengthSize: lengthSize(2, 10)
+  chineseOnly: regEx(/[\u4e00-\u9fa5]$/),
+  lengthSize: lengthSize(2, 5)
 }
 
 export const mobile = {
   required,
-  mathOnly: regEx(/^[0-9]*$/)
-  // chineseMobile: regEx(/^1[34578]\d{9}$/)
+  mathOnly: regEx(/^[0-9]*$/),
+  chineseMobile: regEx(/^1[34578]\d{9}$/)
 }
 
 export const date = {
