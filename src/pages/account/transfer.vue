@@ -103,6 +103,7 @@
           from: '',
           to: ''
         }
+        this.$v.$reset()
       },
       action (formData) {
         this.$v.$touch()

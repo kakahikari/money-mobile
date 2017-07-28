@@ -94,6 +94,7 @@
           startDate: moment().subtract(7, 'days').format('YYYY-MM-DD'),
           endDate: moment().format('YYYY-MM-DD')
         }
+        this.$v.$reset()
       },
       action (formData, type) {
         this.$v.formData.$touch()

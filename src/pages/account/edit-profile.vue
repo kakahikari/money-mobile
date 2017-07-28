@@ -108,6 +108,7 @@
           addr: this.user.addr,
           birthday: this.user.birthday
         }
+        this.$v.$reset()
       },
       action (formData) {
         this.$v.$touch()

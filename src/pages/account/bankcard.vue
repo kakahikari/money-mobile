@@ -120,6 +120,7 @@
           account: '',
           checkAccount: ''
         }
+        this.$v.$reset()
       },
       action (formData) {
         this.$v.$touch()

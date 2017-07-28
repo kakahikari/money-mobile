@@ -58,6 +58,7 @@
           password: ''
         }
         this.randomCode()
+        this.$v.$reset()
       },
       async randomCode () {
         let rand = await Math.floor(Math.random() * 10000).toString()

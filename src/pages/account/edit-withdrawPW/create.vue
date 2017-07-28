@@ -37,6 +37,7 @@
           withdrawPW: '',
           checkPW: ''
         }
+        this.$v.$reset()
       },
       action (formData) {
         this.$v.$touch()

@@ -107,6 +107,7 @@
           playername: '',
           orderNo: ''
         }
+        this.$v.$reset()
       },
       action (formData) {
         this.$v.$touch()

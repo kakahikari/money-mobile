@@ -68,6 +68,7 @@ export default {
         bank: {},
         withdrawPW: ''
       }
+      this.$v.$reset()
     },
     action (formData) {
       this.$v.$touch()
