@@ -11,7 +11,7 @@
         mail-panel
     .logo(v-if="$route.name == 'index'" ":class"="{'marquee-active': marqueeActive}")
       img(src="static/images/logo.png")
-    mt-popup(position="left" v-model="menuActive")
+    mt-popup.pop(position="left" v-model="menuActive" popup-transition="popup-fade")
       main-menu(
         @closeBtnClick="menuToogle(false)"
         @translateBtnClick="actionsheetToogle()"
