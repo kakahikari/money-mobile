@@ -20,12 +20,12 @@ export const routes = [
           { path: 'edit-profile', name: 'Edit-profile', components: require('@/pages/account/edit-profile'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
           { path: 'edit-password', name: 'Edit-password', components: require('@/pages/account/edit-password'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
           { path: 'edit-withdrawPW', name: 'Edit-withdrawPW', components: require('@/pages/account/edit-withdrawPW'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
-          { path: 'transfer', name: 'Transfer', components: require('@/pages/account/transfer'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
-          { path: 'deposit', name: 'Deposit', components: require('@/pages/account/deposit'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
-          { path: 'withdraw', name: 'Withdraw', components: require('@/pages/account/withdraw'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresWithdrawPW: true } },
-          { path: 'bankcard', name: 'Bankcard', components: require('@/pages/account/bankcard'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
-          { path: 'mails', name: 'Mails', components: require('@/pages/account/mails'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } },
-          { path: 'history', name: 'History', components: require('@/pages/account/history'), meta: { noMenu: true, isLastPage: true, requiresAuth: true } }
+          { path: 'transfer', name: 'Transfer', components: require('@/pages/account/transfer'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresProfile: true } },
+          { path: 'deposit', name: 'Deposit', components: require('@/pages/account/deposit'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresProfile: true } },
+          { path: 'withdraw', name: 'Withdraw', components: require('@/pages/account/withdraw'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresProfile: true, requiresWithdrawPW: true } },
+          { path: 'bankcard', name: 'Bankcard', components: require('@/pages/account/bankcard'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresProfile: true } },
+          { path: 'mails', name: 'Mails', components: require('@/pages/account/mails'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresProfile: true } },
+          { path: 'history', name: 'History', components: require('@/pages/account/history'), meta: { noMenu: true, isLastPage: true, requiresAuth: true, requiresProfile: true } }
         ]
       }
     ]

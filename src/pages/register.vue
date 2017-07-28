@@ -97,7 +97,7 @@
           window.setTimeout(() => {
             Indicator.close()
             this.$root.login(formData).then((res) => {
-              this.$router.replace({name: 'index'})
+              this.$router.replace({name: 'Edit-profile'})
             }).catch((err) => {
               this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
               this.$router.replace({name: 'index'})
