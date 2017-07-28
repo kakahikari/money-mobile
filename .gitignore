@@ -17,3 +17,7 @@ src/config.js
 *.ntvs*
 *.njsproj
 *.sln
+
+# firebase
+.firebaserc
+firebase.json
