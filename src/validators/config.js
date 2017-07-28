@@ -26,6 +26,7 @@ export const checkPW = (sameVM) => {
 }
 
 export const checkEmail = {
+  required,
   email
 }
 
