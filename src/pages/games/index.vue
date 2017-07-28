@@ -18,7 +18,7 @@
   import node from '@/components/game-node'
   import balanceBar from './balance-bar'
   import { mapState } from 'vuex'
-  import { GAMEGROUP } from '@/xhrConfig'
+  import { GAMEGROUP } from '@/siteConfig'
   import { Indicator } from 'mint-ui'
 
   export default {

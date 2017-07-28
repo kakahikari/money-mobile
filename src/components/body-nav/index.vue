@@ -11,7 +11,7 @@
 
 <script>
   import { mapState } from 'vuex'
-  import { SERVICELINK } from '@/xhrConfig'
+  import { SERVICELINK } from '@/siteConfig'
 
   export default {
     name: 'body-nav',

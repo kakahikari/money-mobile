@@ -2,7 +2,7 @@
   section.main-menu
     button.close-button(@click="close()")
       icon(name="close" slot="icon")
-    button.translate-button(@click="translateBtnClick()")
+    button.translate-button(v-if="siteLanguages.length > 1" @click="translateBtnClick()")
       icon(name="language" slot="icon")
     login-panel
     nav
@@ -28,7 +28,7 @@
   import Vue from 'vue'
   import loginPanel from './login-panel'
   import { Header, Cell, Actionsheet } from 'mint-ui'
-  import { SERVICELINK } from '@/xhrConfig'
+  import { SERVICELINK, SITELANGUAGES } from '@/siteConfig'
   Vue.component(Header.name, Header)
   Vue.component(Cell.name, Cell)
   Vue.component(Actionsheet.name, Actionsheet)
@@ -38,7 +38,8 @@
 
     data () {
       return {
-        serviceLink: SERVICELINK
+        serviceLink: SERVICELINK,
+        siteLanguages: SITELANGUAGES
       }
     },
 

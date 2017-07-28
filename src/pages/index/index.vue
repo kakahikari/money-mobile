@@ -18,7 +18,7 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import hotGames from './hot-games'
-  import { GAMEGROUP, HOTGAMES } from '@/xhrConfig'
+  import { GAMEGROUP, HOTGAMES } from '@/siteConfig'
   import { Swipe, SwipeItem } from 'mint-ui'
   Vue.component(Swipe.name, Swipe)
   Vue.component(SwipeItem.name, SwipeItem)

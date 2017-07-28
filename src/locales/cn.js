@@ -139,6 +139,7 @@ export default {
     'please setup your basic information': '请先设定个人基本信息',
     'login failed': '登入失败',
     'this game platform not found': '查无该游戏群',
+    'this language not found': '查无该语系',
     //
     'API server not responding (ERR_CONNECTION_REFUSED)': 'API 服务无回应 (ERR_CONNECTION_REFUSED)',
     'API server not responding': 'API 服务无回应',

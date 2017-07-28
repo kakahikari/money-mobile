@@ -4,7 +4,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { SITENAME } from '@/xhrConfig'
+import { SITENAME } from '@/siteConfig'
 
 export default {
   name: 'body-footer',

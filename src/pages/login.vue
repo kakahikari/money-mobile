@@ -26,7 +26,7 @@
   import formErrors from '@/components/form-errors'
   import formError from '@/components/form-errors/form-error'
   import { username, password } from '@/validators/config'
-  import { SERVICELINK } from '@/xhrConfig'
+  import { SERVICELINK } from '@/siteConfig'
   import { Field, Button, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)

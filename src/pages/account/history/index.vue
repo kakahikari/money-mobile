@@ -42,7 +42,7 @@
   import formErrors from '@/components/form-errors'
   import { date, platform } from '@/validators/config'
   import vTable from '@/components/form/v-table'
-  import { GAMEGROUP } from '@/xhrConfig'
+  import { GAMEGROUP } from '@/siteConfig'
   import { Field, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)

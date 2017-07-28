@@ -24,6 +24,8 @@
   import marquee from './marquee'
   import mailPanel from '@/components/mail-panel'
   import mainMenu from '@/components/main-menu'
+  import { SITELANGUAGES } from '@/siteConfig'
+  import { errorCodes } from '@/xhrConfig'
   import { Header, Button, Popup, Badge } from 'mint-ui'
   Vue.component(Header.name, Header)
   Vue.component(Button.name, Button)
@@ -38,10 +40,6 @@
         menuActive: false,
         actionsheetActive: false,
         marqueeActive: true,
-        language: [
-          { name: '中文', method: this.translate },
-          { name: 'English', method: this.translate }
-        ],
         isLastPage: false
       }
     },
@@ -50,6 +48,13 @@
       pageTitle () {
         if (this.$route.name === 'index') return ''
         return this.$root.i18n(this.$route.name)
+      },
+      language () {
+        let out = []
+        SITELANGUAGES.forEach((node) => {
+          out.push({ name: node.text, method: this.translate })
+        })
+        return out
       }
     },
 
@@ -77,8 +82,9 @@
         this.$emit('marqueeToggle', this.marqueeActive)
       },
       translate (val) {
-        if (val.name === 'English') this.$store.commit('SET_USER_LANGUAGE', 'en')
-        else this.$store.commit('SET_USER_LANGUAGE', 'cn')
+        let target = SITELANGUAGES.filter(node => node.text === val.name)
+        if (target.length > 0) this.$store.commit('SET_USER_LANGUAGE', target[0].value)
+        else this.$root.showToast({type: 'warning', content: this.$root.i18n(errorCodes['v-no-language'])})
         this.menuToogle(false)
       },
       checkIsLastpage () {
