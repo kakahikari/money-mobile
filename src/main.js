@@ -34,10 +34,19 @@ import 'normalize.css/normalize.css'
 import 'scss/style.scss'
 import 'mint-ui/lib/style.css'
 
+import { SITENAME } from '@/siteConfig'
+
 /* eslint-disable no-new */
 export const App = new Vue({
   created () {
     this.$store.dispatch('SET_DEFAULT')
+    window.document.title = this.sitename[this.language]
+  },
+
+  data () {
+    return {
+      sitename: SITENAME
+    }
   },
 
   computed: mapState({
