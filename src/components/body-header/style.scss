@@ -41,8 +41,8 @@
 .mint-swipe-item {
   overflow: hidden;
   line-height: $layout_fixedHeight;
-  text-align: center;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .logo {

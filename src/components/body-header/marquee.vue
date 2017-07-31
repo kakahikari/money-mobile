@@ -5,7 +5,7 @@
     router-link.marquee__content(":to"="{name: 'Notice-list'}")
       mt-swipe(":auto"="10000" ":showIndicators"="false")
         template(v-for="node in marqueeList")
-          mt-swipe-item {{ node.legend }}{{ node.content }}
+          mt-swipe-item [{{ node.legend }}] {{ node.content }}
     .marquee__close(@click="marqueeToggle()")
       icon(name="close")
 </template>
