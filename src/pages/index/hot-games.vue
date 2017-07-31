@@ -23,6 +23,7 @@
     },
 
     props: {
+      groupName: '',
       groupId: '',
       length: 0
     },
@@ -33,12 +34,12 @@
       },
       language: function (state) {
         return state.USER.language
-      },
-      groupName: function () {
-        let target = this.group.filter(node => node.id === this.groupId)
-        if (target.length > 0) return target[0].name.toLowerCase()
-        return ''
       }
+      // groupName: function () {
+      //   let target = this.group.filter(node => node.id === this.groupId)
+      //   if (target.length > 0) return target[0].name.toLowerCase()
+      //   return ''
+      // }
     }),
 
     watch: {

@@ -2,6 +2,7 @@ export const GAMEGROUP = [
   { text: 'CQ9', name: 'Cypress', id: '23' }
 ]
 export const HOTGAMES = {
+  groupName: 'cypress',
   groupId: '23',
   length: 9
 }
