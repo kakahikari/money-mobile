@@ -24,6 +24,7 @@
             span.mint-cell-text {{ $root.i18n('Bank name') }}
           .mint-cell-value
             select.mint-field-core(v-model="bankName")
+              option(value="") {{ $root.i18n('please select') }}
               template(v-for="node in bankOpts")
                 option(":value"="node.value") {{ node.name }}
       mt-field(v-model="formData.bankName" v-if="bankName=='other'" ":placeholder"="$root.i18n('Please input bank name')")

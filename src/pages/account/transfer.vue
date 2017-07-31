@@ -20,6 +20,7 @@
             span.mint-cell-text {{ $root.i18n('Transfer from') }}
           .mint-cell-value
             select.mint-field-core(v-model="formData.from")
+              option(value="") {{ $root.i18n('please select') }}
               option(":value"="centerWallet.id") {{ $root.i18n(walletList[centerWallet.id]) }}
               template(v-for="node in walletDetails")
                 option(":value"="node.id") {{ walletList[node.id] }}
@@ -30,6 +31,7 @@
             span.mint-cell-text {{ $root.i18n('Transfer to') }}
           .mint-cell-value
             select.mint-field-core(v-model="formData.to")
+              option(value="") {{ $root.i18n('please select') }}
               option(":value"="centerWallet.id") {{ $root.i18n(walletList[centerWallet.id]) }}
               template(v-for="node in walletDetails")
                 option(":value"="node.id") {{ walletList[node.id] }}

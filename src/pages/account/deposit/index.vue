@@ -11,6 +11,7 @@
             span.mint-cell-text {{ $root.i18n('Bankcard') }}
           .mint-cell-value
             select.mint-field-core(v-model="bank")
+              option(":value"="{bankName: '', playername: '', account: ''}") {{ $root.i18n('please select') }}
               template(v-for="node in bankList")
                 option(":value"="node") {{ node.bankName }} - {{ node.account }}
       form-errors(":errors"="$v.bank")
