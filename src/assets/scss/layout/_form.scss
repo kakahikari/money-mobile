@@ -5,13 +5,13 @@ select {
   width: 100%;
   padding: $inputPadding;
   color: $input_color;
-  background-color: $input_bgc;
+  background-color: transparent;
   border: $inputBorderWidth solid;
   border-color: $input_border_color;
   border-radius: $globalBorderRadius;
   transition: all .3s;
   &[readonly=readonly] {
-    background-color: $bgc;
+    background-color: $input_readonly;
   }
 }
 
@@ -32,19 +32,20 @@ button {
   }
 }
 
-.form.color {
-  background-image: linear-gradient(to bottom, $light_color0 1%, $bgc 33%);
-}
-
 .form__logo {
   @include mid;
   padding: 1em 0;
   text-align: center;
 }
 
+.form__logo__img {
+  height: auto;
+  max-width: 80%;
+}
+
 .form__fields {
   margin: 1em;
-  background-color: $input_bgc;
+  overflow: hidden;
   border-color: $form_fields_border_color;
   border-style: solid;
   border-width: 1px;
@@ -55,6 +56,13 @@ button {
     .mint-cell-wrapper {
       color: $input_color;
       background-color: $bgc;
+    }
+  }
+  .mint-radiolist,
+  .mint-checklist {
+    background-color: $bgc;
+    .mint-cell {
+      background-color: $input_bgc;
     }
   }
   .mint-checklist-title {

@@ -13,8 +13,8 @@
   width: 100%;
   height: $layout_fixedHeight;
   overflow-x: scroll;
-  color: $reverse_body_nav_bgc;
-  background-color: $body_nav_bgc;
+  color: $nav_color;
+  background-color: $nav_bgc;
   & ::-webkit-scrollbar {
     display: none;
   }
@@ -30,7 +30,7 @@
   border-bottom: 4px solid transparent;
   transition: border $transit;
   &.active {
-    border-bottom-color: $light_color0;
+    border-bottom-color: $nav_active;
   }
 }
 

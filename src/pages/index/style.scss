@@ -21,9 +21,6 @@
 .game-hall {
   display: flex;
   flex-wrap: wrap;
-  background-color: $light_color0;
-  background-image: linear-gradient(to top, $light_color0, $color0);
-
 }
 
 .game-hall__node {
@@ -69,13 +66,10 @@
 }
 
 .hot-games__legend {
-  @include shadow;
   padding: 1em 0;
   margin-top: 0;
   margin-bottom: 0;
-  color: $reverse_color0;
   text-align: center;
-  background-color: $color0;
 }
 
 .hot-games__content {

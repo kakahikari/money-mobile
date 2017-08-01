@@ -130,15 +130,3 @@
   border: 2px solid;
   box-shadow: 0 0 4px 0 #e0e0e0;
 }
-
-@mixin button {
-  color: #212121;
-  background-image: linear-gradient(to bottom, #ffc107, #f76b1c);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25), 0 0 4px 0 rgba(0, 0, 0, .15);
-}
-
-@mixin button2 {
-  color: #212121;
-  background-image: linear-gradient(to bottom, #b4ed50, #429321);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25), 0 0 4px 0 rgba(0, 0, 0, .15);
-}

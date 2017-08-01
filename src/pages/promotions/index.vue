@@ -66,6 +66,7 @@
           this.types = this.types.concat(dedup(types))
           Indicator.close()
         }).catch((err) => {
+          console.log(err)
           Indicator.close()
           this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
         })

@@ -1,0 +1,83 @@
+$bgc: #671a12;
+$reverse_bgc: #fff;
+
+$color0: #b12b27;
+$light_color0: #c1151c;
+$reverse_color0: #fff;
+
+$nav_bgc: $bgc;
+$nav_color: #fff;
+$nav_active: #ffd800;
+
+$marquee_bgc: #ffc107;
+$marquee_bgc2: #f76b1c;
+$reverse_marquee_bgc: #212121;
+
+$main_menu_bgc: $bgc;
+$reverse_main_menu_bgc: $reverse_bgc;
+
+$money_color: #ffc107;
+$body_nav_bgc: #212121;
+$reverse_body_nav_bgc: $reverse_bgc;
+
+$form_fields_border_color: transparent;
+
+$input_color: #fff;
+$input_bgc: rgba(#000, .28);
+$input_border_color: lighten(#000, 20);
+$input_placeholder: lighten(#757575, 10);
+$input_error_color: #ff6779;
+$input_readonly: #757575;
+
+$button_color: #02051d;
+$button_border_color: $input_border_color;
+
+$main_font_color: #02051d;
+$main_font_color2: #5a720d;
+
+$table_th_text_color: #fff;
+$table_th_bgc: #c1151c;
+$table_bgc: #47110b;
+$table_text_color: #fff;
+$table_border_color: #fff;
+
+//- vToast
+$error: rgb(218, 52, 52);
+$warning: rgb(255, 200, 76);
+$success: rgb(80, 210, 162);
+
+.game-hall {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.54)), linear-gradient(to bottom, #c1151c, #70100a) !important;
+}
+
+.hot-games__legend {
+  color: #ffd800;
+  background-color: $bgc;
+}
+
+.notice-list,
+.mails {
+  .mint-cell {
+    background-color: $bgc;
+  }
+}
+
+.detail__title {
+  color: #ffd800;
+}
+
+.info__item.main {
+  background-color: #47110b;
+}
+
+@mixin button {
+  color: #212121;
+  background-color: #ffd800;
+}
+
+@mixin button2 {
+  color: #fff;
+  background-color: $bgc;
+  border: solid 2px #ffd800;
+  border-radius: 4px;
+}

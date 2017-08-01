@@ -1,5 +1,5 @@
 <template lang="pug">
-  section
+  section.notice-list
     template(v-for="node in marqueeList")
       node(":legend"="node.legend" ":content"="node.content")
 </template>

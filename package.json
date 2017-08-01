@@ -8,7 +8,7 @@
     "clean": "rm -rf node_modules && rm -rf dist/*",
     "init": "yarn run clean && yarn install && node setVersion",
     "npmInit": "npm run clean && npm install && node setVersion",
-    "devEnv": "node setConfig '/api' 'panda.sh56789.com'",
+    "devEnv": "node setConfig '/api' 'panda.sh56789.com' && node setSite 'C5'",
     "dev": "node build/dev-server.js",
     "build": "rm -rf dist/* && node setVersion && node build/build.js",
     "lint": "eslint --ext .js,.vue src"
@@ -53,6 +53,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "graceful-fs": "^4.1.11",
     "html-webpack-plugin": "^2.29.0",
     "http-proxy-middleware": "^0.17.3",
     "material-design-icons": "^3.0.1",

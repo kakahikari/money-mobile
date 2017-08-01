@@ -1,4 +1,4 @@
-let fs = require('fs')
+let fs = require('graceful-fs')
 
 let setConfig = (_version) => {
   const content = `export const _VERSION = '${_version}'\n`

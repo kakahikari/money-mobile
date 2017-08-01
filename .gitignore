@@ -10,6 +10,8 @@ src/hq-money-services
 src/hq-money-stores
 src/version.js
 src/config.js
+src/siteCode.js
+src/assets/scss/_color.scss
 
 # Editor directories and files
 .idea

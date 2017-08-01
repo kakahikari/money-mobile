@@ -1,7 +1,7 @@
 <template lang="pug">
   section.form.color
     .form__logo
-      img(src="static/images/logo.png")
+      img.form__logo__img(src="static/images/logo.png")
     .form__fields
       mt-field(":label"="$root.i18n('Account')" v-model="formData.username")
       form-errors(":errors"="$v.formData.username")

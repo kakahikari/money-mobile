@@ -14,6 +14,7 @@ yarn run init
 
 # setting
 node setConfig `API_URL` `SITE_DOMAIN`
+node setSite `SITE_CODE`
 
 # serve with hot reload at localhost:8080
 npm run dev

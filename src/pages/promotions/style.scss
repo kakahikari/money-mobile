@@ -9,8 +9,8 @@
   width: 100%;
   height: $layout_fixedHeight;
   overflow-x: scroll;
-  color: $reverse_main_menu_bgc;
-  background-color: $main_menu_bgc;
+  color: $nav_color;
+  background-color: $nav_bgc;
 }
 
 .promotions-navbar-item {
@@ -23,7 +23,7 @@
   border-bottom: 4px solid transparent;
   transition: border $transit;
   &.active {
-    border-bottom-color: $light_color0;
+    border-bottom-color: $nav_active;
   }
 }
 

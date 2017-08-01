@@ -9,7 +9,7 @@ let content =
 `export const API_URL = '${_API_URL}'\n` +
 `export const SITE_DOMAIN = '${_SITE_DOMAIN}'\n`
 
-var fs = require('fs')
+var fs = require('graceful-fs')
 
 let setConfig = () => {
   fs.writeFile('src/config.js', content, 'utf-8', (err) => {
@@ -19,7 +19,8 @@ let setConfig = () => {
         > BUILD_DATE: ${_BUILD_DATE}
         > API_URL: ${_API_URL}
         > SITE_DOMAIN: ${_SITE_DOMAIN}
-      ******************************`)
+      ******************************
+    `)
   })
 }
 

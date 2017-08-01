@@ -22,6 +22,7 @@
 }
 
 .actions {
+  margin-top: 1em;
   text-align: right;
 }
 
@@ -39,8 +40,8 @@
   width: 100%;
   height: $layout_fixedHeight;
   overflow-x: scroll;
-  color: $reverse_body_nav_bgc;
-  background-color: $body_nav_bgc;
+  color: $nav_color;
+  background-color: $nav_bgc;
 }
 
 .mails-navbar-item {
@@ -53,11 +54,10 @@
   border-bottom: 4px solid transparent;
   transition: border $transit;
   &.active {
-    border-bottom-color: $light_color0;
+    border-bottom-color: $nav_active;
   }
 }
 
 .mint-button {
-  color: $reverse_body_nav_bgc;
-  background-color: $body_nav_bgc;
+  @include button2;
 }
