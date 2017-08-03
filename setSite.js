@@ -19,7 +19,7 @@ let setConfig = () => {
       ******************************
     `)
   })
-  fs.writeFile('src/assets/scss/_color.scss', scssColor, 'utf-8', (err) => {
+  fs.writeFile('src/assets/scss/_setting.scss', scssColor, 'utf-8', (err) => {
     if (err) throw err
   })
   fs.createReadStream(siteResource + '/favicon.ico').pipe(fs.createWriteStream('static/favicon.ico'))

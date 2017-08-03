@@ -10,7 +10,7 @@
             .info__item__title {{ $root.i18n('Balance') }}
             .info__item__val.money {{ walletSum.toString() | currency }}
     section
-      h3 {{ $root.i18n('Wallet center') }}
+      h3.account__title {{ $root.i18n('Wallet center') }}
       mt-cell(":title"="$root.i18n('Transfer')" is-link ":to"="{name: 'Transfer'}")
         icon(slot="icon" name="compare_arrows")
       mt-cell(":title"="$root.i18n('Deposit')" is-link ":to"="{name: 'Deposit'}")
@@ -22,7 +22,7 @@
       mt-cell(":title"="$root.i18n('History')" is-link ":to"="{name: 'History'}")
         icon(slot="icon" name="history")
     section
-      h3 {{ $root.i18n('Security settings') }}
+      h3.account__title {{ $root.i18n('Security settings') }}
       mt-cell(":title"="$root.i18n('Edit profile')" is-link ":to"="{name: 'Edit-profile'}")
         icon(slot="icon" name="edit")
       mt-cell(":title"="$root.i18n('Edit account password')" is-link ":to"="{name: 'Edit-password'}")

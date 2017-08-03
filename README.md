@@ -33,10 +33,12 @@ npm run build --report
 |-- config                #環境配置
 |-- dist                  #專案建置輸出目錄
 |-- node_modules
+|-- site_resource         #各站圖片置換資源
 |-- src
     |-- assets
         |-- images        #圖片
         |-- scss          #全域scss
+            |-- sites     #各站顏色設定
     |-- components        #vue元件
         |-- form          #表單元件
     |-- helper            #小工具
@@ -45,6 +47,6 @@ npm run build --report
     |-- locales           #語系檔案
     |-- pages             #路由的頁面元件
     |-- routes            #路由目錄
-    |-- validators        #欄位驗證的設定檔
+    |-- validators        #欄位驗證工具
 |-- static                #靜態資源目錄
 ```

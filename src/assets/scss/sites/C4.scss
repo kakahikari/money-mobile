@@ -1,0 +1,152 @@
+// layout settings
+$form_fields_border_ridius: 0;
+$button_radius: 0;
+
+// color settings
+$bgc: #212a5f;
+$reverse_bgc: #fff;
+
+$color0: #212a5f;
+$light_color0: #b4ed50;
+$reverse_color0: #fff;
+
+$nav_bgc: #212121;
+$nav_color: #fff;
+$nav_active: #ffc107;
+
+$marquee_bgc: #50e3c2;
+$marquee_bgc2: #212a5f;
+$reverse_marquee_bgc: #fff;
+
+$main_menu_bgc: $bgc;
+$reverse_main_menu_bgc: $reverse_bgc;
+
+$money_color: #ffc107;
+$body_nav_bgc: #212121;
+$reverse_body_nav_bgc: $reverse_bgc;
+
+$form_fields_border_color: transparent;
+
+$input_color: #000;
+$input_bgc: #f8f8f9;
+$input_border_color: lighten(#000, 20);
+$input_placeholder: #757575;
+$input_error_color: #ff6779;
+$input_readonly: lighten(#757575, 20);
+
+$button_color: #02051d;
+$button_border_color: $input_border_color;
+
+$main_font_color: #02051d;
+$main_font_color2: #5a720d;
+
+$table_th_text_color: #fff;
+$table_th_bgc: #212a5f;
+$table_bgc: rgba(#fff, .2);
+$table_text_color: #fff;
+$table_border_color: #fff;
+
+//- vToast
+$error: rgb(218, 52, 52);
+$warning: rgb(255, 200, 76);
+$success: rgb(80, 210, 162);
+
+.layout__viewport {
+  background-image: linear-gradient(152deg, #4990e2, $bgc);
+}
+
+.game-hall {
+  background-color: $bgc;
+}
+
+.hot-games__legend {
+  @include shadow;
+  color: $color0;
+  background-color: darken(#fff, 20);
+  background-image: radial-gradient(circle at 50% 24%, rgba(74, 144, 226, .03), $color0);
+}
+
+
+.hot-games__content {
+  background-color: rgba(#000, .4);
+}
+
+.main-menu {
+  .mint-cell-wrapper {
+    color: #fff;
+    background-color: #1b2349;
+  }
+}
+
+.translate-button,
+.close-button {
+  color: $color0;
+  background-color: #d8d8d8;
+}
+
+.form.color {
+  background-image: url("~@/assets/images/bg-register.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.mint-button {
+  border-radius: $form_fields_border_ridius !important;
+}
+
+.form__logo__img {
+  width: 145px;
+}
+
+.notice-list,
+.mails {
+  .mint-cell {
+    background: transparent;
+  }
+  .mint-cell-wrapper {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .2);
+  }
+  .mint-cell-value {
+    color: #fff;
+  }
+  .mint-cell-label {
+    color: #ff5722;
+  }
+  .time {
+    color: #ffc107;
+  }
+}
+
+.account__title {
+  color: #fff;
+}
+
+.info__item {
+  background-color: rgba(0, 0, 0, .4);
+  border: 1px solid $bgc;
+}
+
+.info__item__title {
+  color: #fff;
+}
+
+.mint-radiolist {
+  background-color: transparent;
+  .mint-radiolist-title {
+    color: #fff;
+  }
+}
+
+@mixin button {
+  color: #212121;
+  background-image: linear-gradient(to bottom, #ffc107, #f76b1c);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25), 0 0 4px 0 rgba(0, 0, 0, .15);
+}
+
+@mixin button2 {
+  color: #212121;
+  background-image: linear-gradient(to right, #ffc107, #ffd800 50%, #ffc107);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25), 0 0 4px 0 rgba(0, 0, 0, .15);
+}

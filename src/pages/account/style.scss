@@ -31,8 +31,6 @@
   flex-direction: column;
   justify-content: center;
   padding: 10px;
-  background-color: $input_bgc;
-  border: 2px solid $bgc;
   border-radius: $form_fields_border_ridius;
   &.main {
     position: relative;
@@ -43,10 +41,6 @@
     width: 50%;
     min-width: 50%;
   }
-}
-
-.info__item__title {
-  color: $input_placeholder;
 }
 
 .info__item__val {

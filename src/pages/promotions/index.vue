@@ -64,10 +64,13 @@
             return out
           })
           this.types = this.types.concat(dedup(types))
-          Indicator.close()
+          window.setTimeout(() => {
+            Indicator.close()
+          }, 100)
         }).catch((err) => {
-          console.log(err)
-          Indicator.close()
+          window.setTimeout(() => {
+            Indicator.close()
+          }, 100)
           this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
         })
       },

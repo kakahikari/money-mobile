@@ -1,3 +1,7 @@
+// layout settings
+$form_fields_border_ridius: 4px;
+
+// color settings
 $bgc: #671a12;
 $reverse_bgc: #fff;
 
@@ -55,6 +59,13 @@ $success: rgb(80, 210, 162);
   background-color: $bgc;
 }
 
+.translate-button,
+.close-button {
+  @include lightRing;
+  color: $reverse_main_menu_bgc;
+  background: none;
+}
+
 .notice-list,
 .mails {
   .mint-cell {
@@ -66,8 +77,16 @@ $success: rgb(80, 210, 162);
   color: #ffd800;
 }
 
-.info__item.main {
-  background-color: #47110b;
+.info__item {
+  background-color: $input_bgc;
+  border: 2px solid $bgc;
+  &.main {
+    background-color: #47110b;
+  }
+}
+
+.info__item__title {
+  color: $input_placeholder;
 }
 
 @mixin button {

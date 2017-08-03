@@ -11,7 +11,9 @@ src/hq-money-stores
 src/version.js
 src/config.js
 src/siteCode.js
-src/assets/scss/_color.scss
+src/assets/scss/_setting.scss
+static/favicon.ico
+static/images/logo.png
 
 # Editor directories and files
 .idea
