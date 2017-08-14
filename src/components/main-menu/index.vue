@@ -13,7 +13,7 @@
         mt-cell(":title"="$root.i18n('Games')")
       router-link(":to"="{name: 'Promotions'}")
         mt-cell(":title"="$root.i18n('Promotions')")
-      a(target="blank" ":href"="serviceLink")
+      a(v-if="serviceLink !== ''" target="blank" ":href"="serviceLink")
         mt-cell(":title"="$root.i18n('Customer Service')")
       router-link(":to"="{name: 'Notice-list'}")
         mt-cell(":title"="$root.i18n('Notice-list')")
