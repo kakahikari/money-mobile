@@ -1,7 +1,7 @@
 import numeral from 'numeral'
 import translation from '@/locales'
 import i18next from 'i18next'
-import { LANGUAGE } from '@/xhrConfig'
+import { LANGUAGE } from '@/siteConfig'
 
 String.prototype.currency = function ({sign = '', format = '0,0.00'}) {
   const out = numeral(this).format(sign + format)
