@@ -3,3 +3,6 @@ build/*.js
 config/*.js
 src/hq-money-services/*
 src/hq-money-stores/*
+src/xhrConfig.js
+src/siteConfig.js
+src/siteCode.js

@@ -9,16 +9,14 @@
       router-link(":to"="{name: 'index'}")
         mt-cell(":title"="$root.i18n('Index')")
           icon(name="home")
-      router-link(":to"="{name: 'Games'}")
+      router-link(":to"="{name: 'Games'}" v-if="checkFunctionEnable('games')")
         mt-cell(":title"="$root.i18n('Games')")
-      router-link(":to"="{name: 'Promotions'}")
+      router-link(":to"="{name: 'Promotions'}" v-if="checkFunctionEnable('promotions')")
         mt-cell(":title"="$root.i18n('Promotions')")
-      a(v-if="serviceLink !== ''" target="blank" ":href"="serviceLink")
+      a(target="blank" ":href"="serviceLink" v-if="serviceLink !== '' && checkFunctionEnable('service-link')")
         mt-cell(":title"="$root.i18n('Customer Service')")
-      router-link(":to"="{name: 'Notice-list'}")
+      router-link(":to"="{name: 'Notice-list'}" v-if="checkFunctionEnable('notice-list')")
         mt-cell(":title"="$root.i18n('Notice-list')")
-      //- a
-      //-   mt-cell(title="常見問題")
     div
       a(href="/")
         mt-cell(":title"="$root.i18n('Switch to PC version')")
@@ -28,7 +26,7 @@
   import Vue from 'vue'
   import loginPanel from './login-panel'
   import { Header, Cell, Actionsheet } from 'mint-ui'
-  import { SERVICELINK, SITELANGUAGES } from '@/siteConfig'
+  import { SERVICELINK, SITELANGUAGES, SITE_FUNCTIONS } from '@/siteConfig'
   Vue.component(Header.name, Header)
   Vue.component(Cell.name, Cell)
   Vue.component(Actionsheet.name, Actionsheet)
@@ -39,11 +37,17 @@
     data () {
       return {
         serviceLink: SERVICELINK,
-        siteLanguages: SITELANGUAGES
+        siteLanguages: SITELANGUAGES,
+        siteFunctions: SITE_FUNCTIONS
       }
     },
 
     methods: {
+      checkFunctionEnable (functionName) {
+        let target = this.siteFunctions.filter(node => node.name === functionName)
+        if (target.length > 0) return target[0].enable
+        return false
+      },
       close () {
         this.$emit('closeBtnClick')
       },

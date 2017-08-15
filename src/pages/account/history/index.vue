@@ -42,7 +42,7 @@
   import formErrors from '@/components/form-errors'
   import { date, platform } from '@/validators/config'
   import vTable from '@/components/form/v-table'
-  import { GAMEGROUP } from '@/siteConfig'
+  import { GAMEGROUP, SITE_FUNCTIONS } from '@/siteConfig'
   import { Field, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
@@ -56,25 +56,29 @@
         isShowResult: false,
         type: '',
         platform: '',
-        options: [
-          {value: '', text: 'please select'},
-          {value: 'deposit', text: 'deposit'},
-          {value: 'withdraw', text: 'withdraw'},
-          {value: 'transfer', text: 'transfer'},
-          {value: 'login', text: 'login'},
-          {value: 'bet', text: 'bet'}
-        ],
         platformOptions: GAMEGROUP,
         formData: {
           startDate: '',
           endDate: ''
         },
         list: [],
-        columns: {}
+        columns: {},
+        siteFunctions: SITE_FUNCTIONS
       }
     },
 
     computed: {
+      options: function () {
+        let out = [
+          {value: '', text: 'please select'}
+        ]
+        if (this.checkFunctionEnable('deposit')) out.push({value: 'deposit', text: 'deposit'})
+        if (this.checkFunctionEnable('withdraw')) out.push({value: 'withdraw', text: 'withdraw'})
+        if (this.checkFunctionEnable('transfer')) out.push({value: 'transfer', text: 'transfer'})
+        out.push({value: 'login', text: 'login'})
+        out.push({value: 'bet', text: 'bet'})
+        return out
+      },
       startDate: () => {
         return moment().subtract(1, 'years').toDate()
       },
@@ -242,6 +246,11 @@
       },
       endDateChange (val) {
         this.formData.endDate = moment(val).format('YYYY-MM-DD')
+      },
+      checkFunctionEnable (functionName) {
+        let target = this.siteFunctions.filter(node => node.name === functionName)
+        if (target.length > 0) return target[0].enable
+        return false
       }
     },
 

@@ -24,7 +24,7 @@
   import marquee from './marquee'
   import mailPanel from '@/components/mail-panel'
   import mainMenu from '@/components/main-menu'
-  import { SITELANGUAGES } from '@/siteConfig'
+  import { SITELANGUAGES, SITE_FUNCTIONS } from '@/siteConfig'
   import { errorCodes } from '@/xhrConfig'
   import { Header, Button, Popup, Badge } from 'mint-ui'
   Vue.component(Header.name, Header)
@@ -40,7 +40,8 @@
         menuActive: false,
         actionsheetActive: false,
         marqueeActive: true,
-        isLastPage: false
+        isLastPage: false,
+        siteFunctions: SITE_FUNCTIONS
       }
     },
 
@@ -67,9 +68,15 @@
 
     created () {
       this.checkIsLastpage()
+      if (!this.checkFunctionEnable('notice-list')) this.marqueeToggle()
     },
 
     methods: {
+      checkFunctionEnable (functionName) {
+        let target = this.siteFunctions.filter(node => node.name === functionName)
+        if (target.length > 0) return target[0].enable
+        return false
+      },
       menuToogle (val) {
         if (val !== undefined) this.menuActive = val
         else this.menuActive = !this.menuActive
