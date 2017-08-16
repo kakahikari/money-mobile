@@ -6,7 +6,7 @@ let content =
 let scssColor =
 `@import "sites/${_SITE_CODE}";\n`
 
-let siteResource = `site_resource/${_SITE_CODE}`
+let siteResource = `hq_money_config/site_resource/${_SITE_CODE}`
 
 var fs = require('graceful-fs')
 
