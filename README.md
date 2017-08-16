@@ -33,7 +33,6 @@ npm run build --report
 |-- config                #環境配置
 |-- dist                  #專案建置輸出目錄
 |-- node_modules
-|-- site_resource         #各站圖片置換資源
 |-- src
     |-- assets
         |-- images        #圖片
