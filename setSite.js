@@ -6,6 +6,7 @@ let content =
 let scssColor =
 `@import "sites/${_SITE_CODE}";\n`
 
+let xhrResource = `hq_money_config/xhrConfig.js`
 let siteResource = `hq_money_config/site_resource/${_SITE_CODE}`
 
 var fs = require('graceful-fs')
@@ -22,6 +23,7 @@ let setConfig = () => {
   fs.writeFile('src/assets/scss/_setting.scss', scssColor, 'utf-8', (err) => {
     if (err) throw err
   })
+  fs.createReadStream(xhrResource).pipe(fs.createWriteStream('src/xhrConfig.js'))
   fs.createReadStream(siteResource + '/siteConfig.js').pipe(fs.createWriteStream('src/siteConfig.js'))
   fs.createReadStream(siteResource + '/favicon.ico').pipe(fs.createWriteStream('static/favicon.ico'))
   fs.createReadStream(siteResource + '/logo.png').pipe(fs.createWriteStream('static/images/logo.png'))
