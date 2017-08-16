@@ -10,6 +10,8 @@ export default {
     'Edit-profile': 'Edit profile',
     'Edit-password': 'Edit password',
     'Edit-withdrawPW': 'Edit withdraw PW',
-    'Bankcard': 'Linking bank card'
+    'Bankcard': 'Linking bank card',
+    'Online-deposit': 'Online deposit',
+    'Bank-deposit': 'Bank deposit'
   }
 }

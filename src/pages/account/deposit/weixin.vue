@@ -1,0 +1,83 @@
+<template lang="pug">
+  section.deposit
+    .form__fields
+      mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
+      form-errors(":errors"="$v.formData.amount")
+        form-error(v-if="!$v.formData.amount.between") {{ $root.i18n('must between') }} 50 ~ 1,000,000
+    .form__actions
+      mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
+      mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
+    vAutoSendForm(":params"="actions" v-if="!!actions.url")
+</template>
+
+<script>
+  import DepositService from 'hq-money-services/depositService'
+  import Vue from 'vue'
+  import formErrors from '@/components/form-errors'
+  import formError from '@/components/form-errors/form-error'
+  import vAutoSendForm from '@/components/form/v-auto-send-form'
+  import { amount } from '@/validators/config'
+  import { Field, Button, DatetimePicker, Indicator } from 'mint-ui'
+  Vue.component(Field.name, Field)
+  Vue.component(Button.name, Button)
+  Vue.component(DatetimePicker.name, DatetimePicker)
+
+  export default {
+    name: 'deposit__weixin',
+
+    data () {
+      return {
+        actions: {
+          url: '',
+          keys: []
+        },
+        formData: {
+          amount: '',
+          type: 'weixin_scan'
+        }
+      }
+    },
+
+    methods: {
+      init () {
+        this.formData = {
+          amount: '',
+          type: 'weixin_scan'
+        }
+        this.$v.$reset()
+      },
+      action (formData) {
+        this.$v.$touch()
+        if (this.$v.$error) return
+
+        Indicator.open()
+        DepositService.DinPay({context: this, body: formData}).then((res) => {
+          Indicator.close()
+          this.$root.showToast({content: this.$root.i18n('success')})
+          this.init()
+        }).catch((err) => {
+          Indicator.close()
+          this.$root.showToast({type: 'warning', content: this.$root.i18n(err)})
+        })
+      }
+    },
+
+    components: {
+      formErrors,
+      formError,
+      vAutoSendForm
+    },
+
+    validations: {
+      formData: {
+        amount: amount({min: 50, max: 1000000})
+      }
+    }
+  }
+</script>
+
+<style lang="css" scoped>
+  .deposit {
+    padding-top: 10px;
+  }
+</style>

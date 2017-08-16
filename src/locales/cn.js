@@ -90,6 +90,9 @@ export default {
     'amount': '金额',
     'total bet': '总下注',
     'winning': '输赢',
+    'Bank deposit': '银行存款',
+    'Online deposit': '网银存款',
+    'Weixin deposit': '微信支付',
     // page
     'Index': '首页',
     'Login': '登入',
@@ -106,6 +109,9 @@ export default {
     'Edit-withdrawPW': '取款密码修改',
     'Mails': '站内信箱',
     'Bankcard': '绑定银行卡',
+    'Online-deposit': '线上存款',
+    'Bank-deposit': '网银存款',
+    'Weixin-deposit': '微信支付',
     // wallet
     'System': '系统派发',
     'Center Wallet': '中心钱包',
