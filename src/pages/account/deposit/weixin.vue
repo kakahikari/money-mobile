@@ -54,6 +54,8 @@
         DepositService.DinPay({context: this, body: formData}).then((res) => {
           Indicator.close()
           this.$root.showToast({content: this.$root.i18n('success')})
+          this.actions.keys = res.params
+          this.actions.url = res.url
           this.init()
         }).catch((err) => {
           Indicator.close()
