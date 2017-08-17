@@ -72,6 +72,9 @@ button {
 
 .form__actions {
   padding: 1em;
+  &.center {
+    text-align: center;
+  }
 }
 
 .form__result {

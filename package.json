@@ -20,6 +20,7 @@
     "mint-ui": "^2.2.7",
     "moment": "^2.18.1",
     "numeral": "^2.0.6",
+    "qrcode-npm": "^0.0.3",
     "vue": "^2.3.4",
     "vue-flatpickr": "2.2.9",
     "vue-router": "^2.3.1",
