@@ -45,6 +45,12 @@
           type: 'direct_pay'
         }
         this.$v.$reset()
+        setTimeout(() => {
+          this.actions = {
+            url: '',
+            keys: []
+          }
+        }, 500)
       },
       action (formData) {
         this.$v.$touch()

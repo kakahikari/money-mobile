@@ -45,6 +45,12 @@
           type: 'weixin_scan'
         }
         this.$v.$reset()
+        setTimeout(() => {
+          this.actions = {
+            url: '',
+            keys: []
+          }
+        }, 500)
       },
       action (formData) {
         this.$v.$touch()
