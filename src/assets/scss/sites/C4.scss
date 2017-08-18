@@ -37,9 +37,6 @@ $input_readonly: lighten(#757575, 20);
 $button_color: #02051d;
 $button_border_color: $input_border_color;
 
-$main_font_color: #02051d;
-$main_font_color2: #5a720d;
-
 $table_th_text_color: #fff;
 $table_th_bgc: #212a5f;
 $table_bgc: rgba(#fff, .2);
@@ -51,7 +48,7 @@ $error: rgb(218, 52, 52);
 $warning: rgb(255, 200, 76);
 $success: rgb(80, 210, 162);
 
-.layout__viewport {
+body {
   background-image: linear-gradient(152deg, #4990e2, $bgc);
 }
 

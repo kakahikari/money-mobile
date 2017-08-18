@@ -21,6 +21,7 @@
 .game-hall {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .game-hall__node {
