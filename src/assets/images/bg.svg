@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="814px" viewBox="0 0 1440 814" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="47.9392635%" id="radialGradient-1">
+            <stop stop-color="#4A90E2" stop-opacity="0.03" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.6">
+        <g id="Home" transform="translate(0.000000, -1607.000000)" fill="url(#radialGradient-1)">
+            <g id="PROMO" transform="translate(-182.000000, 1607.000000)">
+                <rect id="bg" x="182" y="0" width="1440" height="814"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
