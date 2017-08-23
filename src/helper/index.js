@@ -1,6 +1,6 @@
 import numeral from 'numeral'
-import translation from '@/locales'
 import i18next from 'i18next'
+import resBundle from 'i18next-resource-store-loader?overrideDir=override&baseDir=base!../assets/i18n/index.js'
 import { LANGUAGE } from '@/siteConfig'
 
 String.prototype.currency = function ({sign = '', format = '0,0.00'}) {
@@ -15,7 +15,7 @@ String.prototype.toNumber = function ({format = '0.00'}) {
 
 i18next.init({
   lng: LANGUAGE,
-  resources: translation
+  resources: resBundle
 })
 
 const env = process.env.NODE_ENV

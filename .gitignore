@@ -14,9 +14,11 @@ src/siteCode.js
 src/xhrConfig.js
 src/siteConfig.js
 src/assets/scss/_setting.scss
+src/assets/i18n/base/cn/translation.json
+src/assets/i18n/base/en/translation.json
 static/favicon.ico
 static/images/logo.png
-site_resource/
+hq_money_config/
 
 # Editor directories and files
 .idea

@@ -32,9 +32,11 @@ npm run build --report
 |-- build                 #webpack相關
 |-- config                #環境配置
 |-- dist                  #專案建置輸出目錄
+|-- hq_money_config
 |-- node_modules
 |-- src
     |-- assets
+        |-- i18n          #語系檔案
         |-- images        #圖片
         |-- scss          #全域scss
             |-- sites     #各站顏色設定
@@ -43,7 +45,6 @@ npm run build --report
     |-- helper            #小工具
     |-- hq-money-services
     |-- hq-money-stores
-    |-- locales           #語系檔案
     |-- pages             #路由的頁面元件
     |-- routes            #路由目錄
     |-- validators        #欄位驗證工具

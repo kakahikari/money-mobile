@@ -26,6 +26,7 @@ module.exports = {
     //
     'no-unused-vars': 1,
     'no-extend-native': 0,
-    'no-throw-literal': 0
+    'no-throw-literal': 0,
+    'import/no-webpack-loader-syntax': 1
   }
 }
