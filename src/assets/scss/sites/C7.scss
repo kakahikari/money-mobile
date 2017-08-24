@@ -1,0 +1,148 @@
+// layout settings
+$form_fields_border_ridius: 4px;
+
+// color settings
+$bgc: #212121;
+$reverse_bgc: #fff;
+
+$color0: #092e58;
+$light_color0: #4990e2;
+$reverse_color0: #fff;
+
+$nav_bgc: $bgc;
+$nav_color: #fff;
+$nav_active: $light_color0;
+
+$marquee_bgc: #c1151c;
+$marquee_bgc2: #192e65;
+$reverse_marquee_bgc: #fff;
+
+$main_menu_bgc: #092e58;
+$reverse_main_menu_bgc: $reverse_bgc;
+
+$money_color: #ffc107;
+$body_nav_bgc: $bgc;
+$reverse_body_nav_bgc: $reverse_bgc;
+
+$form_fields_border_color: transparent;
+
+$input_color: #fff;
+$input_bgc: #000;
+$input_border_color: lighten(#000, 20);
+$input_placeholder: #757575;
+$input_error_color: #ff6779;
+$input_readonly: $bgc;
+
+$button_color: #02051d;
+$button_border_color: $input_border_color;
+
+$table_th_text_color: #fff;
+$table_th_bgc: #4990e2;
+$table_bgc: rgba(0, 0, 0, .1);
+$table_text_color: #fff;
+$table_border_color: #757575;
+
+//- vToast
+$error: rgb(218, 52, 52);
+$warning: rgb(255, 200, 76);
+$success: rgb(80, 210, 162);
+
+@mixin lineBg {
+  background-image:
+  radial-gradient(circle at 50% 0, rgba(73, 143, 226, .03), #000),
+  url("~@/assets/images/bg.svg"),
+  url("~@/assets/images/bg-line.svg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size:
+  100% 100%,
+  100% 100%,
+  100% auto;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #212121 20%, #4990e2);
+}
+
+.game-hall {
+  background-color: $light_color0;
+  background-image: linear-gradient(to right, #192e65, #4990e2 48%, #192e65);
+}
+
+.main-menu {
+  .mint-cell-wrapper {
+    color: #fff;
+    background-color: #0f2444;
+  }
+}
+
+.hot-games {
+  @include lineBg;
+}
+
+.translate-button,
+.close-button {
+  @include lightRing;
+  color: $reverse_main_menu_bgc;
+  background: none;
+}
+
+
+.form__logo__img {
+  width: 174px;
+}
+
+.notice-list,
+.mails {
+  .mint-cell {
+    background: transparent;
+  }
+  .mint-cell-wrapper {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .2);
+  }
+  .mint-cell-value {
+    color: #fff;
+  }
+  .mint-cell-label {
+    color: #ff5722;
+  }
+  .time {
+    color: #ffc107;
+  }
+}
+
+.account__title {
+  color: #fff;
+}
+
+.detail__title {
+  color: #ffc107;
+}
+
+.info__item {
+  background-color: $input_bgc;
+  border: 2px solid $bgc;
+}
+
+.info__item__title {
+  color: #fff;
+}
+
+.mint-button {
+  &.login {
+    background-color: #fff !important;
+  }
+}
+
+@mixin button {
+  color: #212121;
+  background-color: #ffc107;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25), 0 0 4px 0 rgba(0, 0, 0, .15);
+}
+
+@mixin button2 {
+  color: #212121;
+  background-color: #ffc107;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25), 0 0 4px 0 rgba(0, 0, 0, .15);
+}
