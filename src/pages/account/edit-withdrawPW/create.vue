@@ -3,7 +3,7 @@
   .form__fields
     mt-field(":label"="$root.i18n('New withdraw PW')" type="password" v-model="formData.withdrawPW")
     form-errors(":errors"="$v.formData.withdrawPW")
-    mt-field(":label"="$root.i18n('Check new password')" type="password" v-model="formData.checkPW")
+    mt-field(":label"="$root.i18n('Confirm password')" type="password" v-model="formData.checkPW")
     form-errors(":errors"="$v.formData.checkPW")
   .form__actions
     mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}

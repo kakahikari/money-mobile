@@ -45,7 +45,7 @@
   "male": "男",
   "female": "女",
   "New password": "新帐户密码",
-  "Check new password": "确认新密码",
+  "Confirm password": "确认新密码",
   "Withdraw PW": "取款密码",
   "New withdraw PW": "新取款密码",
   "Unread": "未读",
@@ -80,8 +80,8 @@
   "bet": "下注",
   "Start date": "起始日期",
   "End date": "结束日期",
-  "not validation": "未审核",
-  "validation": "审核中",
+  "un-validated": "未审核",
+  "validated": "审核中",
   "Platform": "平台",
   "status": "状态",
   "time": "时间",
@@ -92,7 +92,7 @@
   "Bank deposit": "银行存款",
   "Online deposit": "网银存款",
   "Weixin deposit": "微信支付",
-  
+
   "Index": "首页",
   "Login": "登入",
   "Games": "游戏",
