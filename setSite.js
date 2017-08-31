@@ -28,6 +28,7 @@ let setConfig = () => {
   fs.createReadStream(localesResource + '/cn/translation.json').pipe(fs.createWriteStream('src/assets/i18n/base/cn/translation.json'))
   fs.createReadStream(localesResource + '/en/translation.json').pipe(fs.createWriteStream('src/assets/i18n/base/en/translation.json'))
   fs.createReadStream(siteResource + '/siteConfig.js').pipe(fs.createWriteStream('src/siteConfig.js'))
+  fs.createReadStream(siteResource + '/validatorsConfig.js').pipe(fs.createWriteStream('src/validators/config.js'))
   fs.createReadStream(siteResource + '/favicon.ico').pipe(fs.createWriteStream('static/favicon.ico'))
   fs.createReadStream(siteResource + '/logo.png').pipe(fs.createWriteStream('static/images/logo.png'))
 }

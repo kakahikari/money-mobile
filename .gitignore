@@ -13,6 +13,7 @@ src/config.js
 src/siteCode.js
 src/xhrConfig.js
 src/siteConfig.js
+src/validators/config.js
 src/assets/scss/_setting.scss
 src/assets/i18n/base/cn/translation.json
 src/assets/i18n/base/en/translation.json
