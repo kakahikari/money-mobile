@@ -15,7 +15,6 @@
       form-errors(":errors"="$v.formData.withdrawPW")
       mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
       form-errors(":errors"="$v.formData.amount")
-        form-error(v-if="!$v.formData.amount.between") {{ $root.i18n('must between') }} 100 ~ 1,000,000
     .form__fields.no-border
       .form__actions__link
         router-link(":to"="{name: 'Bankcard'}") {{ $root.i18n('No linking bank card?') }}
@@ -30,8 +29,7 @@ import WalletService from 'hq-money-services/walletService'
 import Vue from 'vue'
 import { mapState } from 'vuex'
 import formErrors from '@/components/form-errors'
-import formError from '@/components/form-errors/form-error'
-import { amount, bank, withdrawPW } from '@/validators/config'
+import { withdrawAmount, bank, withdrawPW } from '@/validators/config'
 import { Field, Button, Indicator } from 'mint-ui'
 Vue.component(Field.name, Field)
 Vue.component(Button.name, Button)
@@ -88,15 +86,14 @@ export default {
   },
 
   components: {
-    formErrors,
-    formError
+    formErrors
   },
 
   validations: {
     formData: {
-      amount: amount({min: 100, max: 1000000}),
+      amount: withdrawAmount({}),
       withdrawPW,
-      bank: bank
+      bank
     }
   }
 }

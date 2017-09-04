@@ -6,10 +6,8 @@
       mt-field(":label"="$root.i18n('Referral ID')" v-model="formData.recommender" ":placeholder"="$root.i18n('Optional')")
       mt-field(":label"="$root.i18n('Account')" v-model="formData.username")
       form-errors(":errors"="$v.formData.username")
-        form-error(v-if="!$v.formData.username.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Password')" type="password" v-model="formData.password")
       form-errors(":errors"="$v.formData.password")
-        form-error(v-if="!$v.formData.password.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Confirm PW')" type="password" v-model="formData.checkPW")
       form-errors(":errors"="$v.formData.checkPW")
       mt-field(":label"="$root.i18n('Validation')" v-model="formData.verification")
@@ -118,8 +116,8 @@
 
     validations: {
       formData: {
-        username: username,
-        password: password,
+        username: username({}),
+        password: password({}),
         checkPW: checkPW('password')
       }
     }

@@ -8,7 +8,6 @@
       .form__fields
         mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
         form-errors(":errors"="$v.formData.amount")
-          form-error(v-if="!$v.formData.amount.between") {{ $root.i18n('must between') }} 50 ~ 1,000,000
       .form__actions
         mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
         mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
@@ -21,7 +20,7 @@
   import formErrors from '@/components/form-errors'
   import formError from '@/components/form-errors/form-error'
   import vAutoSendForm from '@/components/form/v-auto-send-form'
-  import { amount } from '@/validators/config'
+  import { depositAmount } from '@/validators/config'
   import qrcode from 'qrcode-npm'
   import { Field, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
@@ -86,7 +85,7 @@
 
     validations: {
       formData: {
-        amount: amount({min: 50, max: 1000000})
+        amount: depositAmount({})
       }
     }
   }

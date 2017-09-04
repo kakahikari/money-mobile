@@ -5,10 +5,8 @@
     .form__fields
       mt-field(":label"="$root.i18n('Account')" v-model="formData.username")
       form-errors(":errors"="$v.formData.username")
-        form-error(v-if="!$v.formData.username.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Password')" type="password" v-model="formData.password")
       form-errors(":errors"="$v.formData.password")
-        form-error(v-if="!$v.formData.password.lengthSize") {{ $root.i18n('the character must have') }} 6 ~ 16
       mt-field(":label"="$root.i18n('Validation')" v-model="formData.verification")
         v-verification(height="45px", width="88px", v-if="verification!=''" ":code"="verification")
     .form__actions
@@ -89,8 +87,8 @@
 
     validations: {
       formData: {
-        username: username,
-        password: password
+        username: username({}),
+        password: password({})
       }
     }
   }
