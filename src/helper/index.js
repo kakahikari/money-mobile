@@ -1,14 +1,14 @@
 import numeral from 'numeral'
 import i18next from 'i18next'
 import resBundle from 'i18next-resource-store-loader?overrideDir=override&baseDir=base!../assets/i18n/index.js'
-import { LANGUAGE } from '@/siteConfig'
+import { LANGUAGE, NUMBER_FORMAT } from '@/siteConfig'
 
-String.prototype.currency = function ({sign = '', format = '0,0.00'}) {
+String.prototype.currency = function ({sign = '', format = NUMBER_FORMAT}) {
   const out = numeral(this).format(sign + format)
   return out
 }
 
-String.prototype.toNumber = function ({format = '0.00'}) {
+String.prototype.toNumber = function ({format = NUMBER_FORMAT}) {
   const out = numeral(this).format(format)
   return out
 }
