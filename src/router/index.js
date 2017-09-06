@@ -30,18 +30,12 @@ const auth = (to, from, next) => {
 
 const profile = (to, from, next) => {
   const { ProfileFilledChcked, isProfileFilled } = store.state.AUTH
-
   if (to.meta.requiresProfile && !isProfileFilled) {
     if (ProfileFilledChcked) {
       router.app.$root.showToast && router.app.$root.showToast({type: 'warning', content: router.app.$root.i18n(errorCodes['v-need-profile'])})
       return next({name: 'Edit-profile'})
     }
-
-    return router.app.$root.init().then((res) => {
-      return profile(to, from, next)
-    })
   }
-
   return withdrawPW(to, from, next)
 }
 
