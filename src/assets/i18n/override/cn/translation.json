@@ -71,6 +71,8 @@
   "Deposit date": "转帐日期",
   "Order No": "流水单号",
   "No linking bank card?": "没有绑定银行卡?",
+  "The IDR amount will be exchanged into IDR(K) in your purse at the rate of 1000：1": "IDR将以1000：1的比例兑换为您的钱包中的IDR(K)",
+  "Please contact customer service for deposit bank account": "请先向客服询问存款帐号",
   "please select": "请选择",
   "please select kind": "请选择类别",
   "Kind": "类别",
