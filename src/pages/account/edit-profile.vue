@@ -4,20 +4,22 @@
       mt-field(":label"="$root.i18n('Account')" ":readonly"="true" v-model="formData.username")
       mt-field(":label"="$root.i18n('Name')" ":readonly"="!!user.playername" v-model="formData.playername")
       form-errors(":errors"="$v.formData.playername")
-    .form__fields
+    .form__fields(v-if="checkFunctionEnable('gender')")
       mt-radio(":title"="$root.i18n('Gender')" ":options"="genderOptions" ":readonly"="!!user.gender" v-model="formData.gender")
     .form__fields
-      mt-field(":label"="$root.i18n('E-mail')" ":readonly"="!!user.email" v-model="formData.email" type="email")
+      mt-field(":label"="$root.i18n('E-mail')" ":readonly"="!!user.email" v-model="formData.email" type="email" v-if="checkFunctionEnable('email')")
       form-errors(":errors"="$v.formData.email")
-      mt-field(":label"="$root.i18n('Mobile')" ":readonly"="!!user.mobile" v-model="formData.mobile" type="tel")
+      mt-field(":label"="$root.i18n('Mobile')" ":readonly"="!!user.mobile" v-model="formData.mobile" type="tel" v-if="checkFunctionEnable('mobile')")
       form-errors(":errors"="$v.formData.mobile")
-      mt-field(":label"="$root.i18n('QQ')" v-model="formData.qq")
-      mt-field(":label"="$root.i18n('Wechat')" v-model="formData.wechat")
-      mt-field(":label"="$root.i18n('Address')" v-model="formData.addr")
-      div(@click="openPicker()")
-        mt-field(":label"="$root.i18n('Birthday')" ":readonly"="true" v-model="formData.birthday")
-      form-errors(":errors"="$v.formData.birthday")
-      mt-datetime-picker(ref="picker" type="date" ":startDate"="new Date(1900, 0, 1)" ":endDate"="today" v-model="today" @confirm="birthdayChange")
+      mt-field(":label"="$root.i18n('QQ')" v-model="formData.qq" v-if="checkFunctionEnable('qq')")
+      mt-field(":label"="$root.i18n('Wechat')" v-model="formData.wechat" v-if="checkFunctionEnable('wechat')")
+      mt-field(":label"="$root.i18n('Pin BB')" v-model="formData.pin_bb" v-if="checkFunctionEnable('pin_bb')")
+      mt-field(":label"="$root.i18n('Address')" v-model="formData.addr" v-if="checkFunctionEnable('address')")
+      div(v-if="checkFunctionEnable('birthday')")
+        div(@click="openPicker()")
+          mt-field(":label"="$root.i18n('Birthday')" ":readonly"="true" v-model="formData.birthday")
+        form-errors(":errors"="$v.formData.birthday")
+        mt-datetime-picker(ref="picker" type="date" ":startDate"="new Date(1900, 0, 1)" ":endDate"="today" v-model="today" @confirm="birthdayChange")
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
@@ -29,6 +31,7 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import formErrors from '@/components/form-errors'
+  import { SITE_FUNCTIONS } from '@/siteConfig'
   import { playerName, date, checkEmail, mobile } from '@/validators/config'
   import { Field, Radio, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
@@ -50,9 +53,11 @@
           mobile: '',
           qq: '',
           wechat: '',
+          pin_bb: '',
           addr: '',
           birthday: ''
-        }
+        },
+        siteFunctions: SITE_FUNCTIONS
       }
     },
 
@@ -103,6 +108,7 @@
           mobile: this.user.mobile,
           qq: this.user.qq,
           wechat: this.user.wechat,
+          pin_bb: this.user.pin_bb,
           addr: this.user.addr,
           birthday: this.user.birthday
         }
@@ -127,6 +133,13 @@
       },
       birthdayChange (val) {
         this.formData.birthday = moment(val).format('YYYY-MM-DD')
+      },
+      checkFunctionEnable (functionName) {
+        let target = this.siteFunctions.filter(node => node.name === 'edit-profile')
+        if (!target.length > 0) return false
+        let targetFunction = target[0].functions.filter(node => node.name === functionName)
+        if (targetFunction.length > 0) return targetFunction[0].enable
+        return false
       }
     },
 
