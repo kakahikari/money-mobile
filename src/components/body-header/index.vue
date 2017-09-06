@@ -24,7 +24,7 @@
   import marquee from './marquee'
   import mailPanel from '@/components/mail-panel'
   import mainMenu from '@/components/main-menu'
-  import { SITELANGUAGES, SITE_FUNCTIONS } from '@/siteConfig'
+  import { SITE_LANGUAGES, SITE_FUNCTIONS } from '@/siteConfig'
   import { errorCodes } from '@/xhrConfig'
   import { Header, Button, Popup, Badge } from 'mint-ui'
   Vue.component(Header.name, Header)
@@ -41,7 +41,8 @@
         actionsheetActive: false,
         marqueeActive: true,
         isLastPage: false,
-        siteFunctions: SITE_FUNCTIONS
+        siteFunctions: SITE_FUNCTIONS,
+        siteLanguages: SITE_LANGUAGES
       }
     },
 
@@ -52,7 +53,7 @@
       },
       language () {
         let out = []
-        SITELANGUAGES.forEach((node) => {
+        SITE_LANGUAGES.forEach((node) => {
           out.push({ name: node.text, method: this.translate })
         })
         return out
@@ -89,7 +90,7 @@
         this.$emit('marqueeToggle', this.marqueeActive)
       },
       translate (val) {
-        let target = SITELANGUAGES.filter(node => node.text === val.name)
+        let target = SITE_LANGUAGES.filter(node => node.text === val.name)
         if (target.length > 0) this.$store.commit('SET_USER_LANGUAGE', target[0].value)
         else this.$root.showToast({type: 'warning', content: this.$root.i18n(errorCodes['v-no-language'])})
         this.menuToogle(false)

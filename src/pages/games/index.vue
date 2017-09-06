@@ -18,7 +18,7 @@
   import node from '@/components/game-node'
   import balanceBar from './balance-bar'
   import { mapState } from 'vuex'
-  import { GAMEGROUP } from '@/siteConfig'
+  import { GAME_GROUP } from '@/siteConfig'
   import { Indicator } from 'mint-ui'
 
   export default {
@@ -26,7 +26,7 @@
 
     data () {
       return {
-        gameGroup: GAMEGROUP,
+        gameGroup: GAME_GROUP,
         selectGroup: {
           name: '',
           id: ''

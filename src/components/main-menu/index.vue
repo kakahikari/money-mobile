@@ -26,7 +26,7 @@
   import Vue from 'vue'
   import loginPanel from './login-panel'
   import { Header, Cell, Actionsheet } from 'mint-ui'
-  import { SERVICELINK, SITELANGUAGES, SITE_FUNCTIONS } from '@/siteConfig'
+  import { SERVICE_LINK, SITE_LANGUAGES, SITE_FUNCTIONS } from '@/siteConfig'
   Vue.component(Header.name, Header)
   Vue.component(Cell.name, Cell)
   Vue.component(Actionsheet.name, Actionsheet)
@@ -36,8 +36,8 @@
 
     data () {
       return {
-        serviceLink: SERVICELINK,
-        siteLanguages: SITELANGUAGES,
+        serviceLink: SERVICE_LINK,
+        siteLanguages: SITE_LANGUAGES,
         siteFunctions: SITE_FUNCTIONS
       }
     },

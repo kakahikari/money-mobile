@@ -34,7 +34,7 @@ import 'normalize.css/normalize.css'
 import 'scss/style.scss'
 import 'mint-ui/lib/style.css'
 
-import { SITENAME } from '@/siteConfig'
+import { SITE_NAME } from '@/siteConfig'
 
 /* eslint-disable no-new */
 export const App = new Vue({
@@ -45,7 +45,7 @@ export const App = new Vue({
 
   data () {
     return {
-      sitename: SITENAME
+      sitename: SITE_NAME
     }
   },
 

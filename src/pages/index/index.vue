@@ -18,7 +18,7 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import hotGames from './hot-games'
-  import { GAMEGROUP, HOTGAMES } from '@/siteConfig'
+  import { GAME_GROUP, HOT_GAMES } from '@/siteConfig'
   import { Swipe, SwipeItem } from 'mint-ui'
   Vue.component(Swipe.name, Swipe)
   Vue.component(SwipeItem.name, SwipeItem)
@@ -29,8 +29,8 @@
     data () {
       return {
         adActive: false,
-        gameGroup: GAMEGROUP,
-        hotGames: HOTGAMES
+        gameGroup: GAME_GROUP,
+        hotGames: HOT_GAMES
       }
     },
 

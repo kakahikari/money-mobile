@@ -5,7 +5,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { SITENAME } from '@/siteConfig'
+import { SITE_NAME } from '@/siteConfig'
 import { _VERSION } from 'src/version'
 
 export default {
@@ -13,7 +13,7 @@ export default {
 
   data () {
     return {
-      sitename: SITENAME,
+      sitename: SITE_NAME,
       version: _VERSION,
       showVersion: false
     }

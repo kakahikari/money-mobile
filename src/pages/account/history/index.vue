@@ -42,7 +42,7 @@
   import formErrors from '@/components/form-errors'
   import { date, platform } from '@/validators/config'
   import vTable from '@/components/form/v-table'
-  import { GAMEGROUP, SITE_FUNCTIONS } from '@/siteConfig'
+  import { GAME_GROUP, SITE_FUNCTIONS } from '@/siteConfig'
   import { Field, Button, DatetimePicker, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
@@ -56,7 +56,7 @@
         isShowResult: false,
         type: '',
         platform: '',
-        platformOptions: GAMEGROUP,
+        platformOptions: GAME_GROUP,
         formData: {
           startDate: '',
           endDate: ''

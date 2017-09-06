@@ -11,14 +11,14 @@
 
 <script>
   import { mapState } from 'vuex'
-  import { SERVICELINK, SITE_FUNCTIONS } from '@/siteConfig'
+  import { SERVICE_LINK, SITE_FUNCTIONS } from '@/siteConfig'
 
   export default {
     name: 'body-nav',
 
     data () {
       return {
-        serviceLink: SERVICELINK,
+        serviceLink: SERVICE_LINK,
         siteFunctions: SITE_FUNCTIONS
       }
     },
