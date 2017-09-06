@@ -50,12 +50,6 @@ a {
   span ~ &:first-of-type {
     margin-left: em(12);
   }
-  &:hover {
-    color: darken($color0, 45);
-  }
-  .ui.steps & {
-    text-decoration: none;
-  }
 }
 
 
