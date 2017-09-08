@@ -25,10 +25,12 @@
           .mint-cell-value
             select.mint-field-core(v-model="bankName")
               option(value="") {{ $root.i18n('please select') }}
-              template(v-for="node in localBankOpts" v-if="checkFunctionEnable('uselocalBankOpts')")
-                option(":value"="node.value") {{ node.name }}
-              template(v-for="node in bankOpts" v-else)
-                option(":value"="node.value") {{ node.name }}
+              template(v-if="checkFunctionEnable('uselocalBankOpts')")
+                template(v-for="node in localBankOpts")
+                  option(":value"="node.value") {{ node.name }}
+              template(v-else)
+                template(v-for="node in bankOpts")
+                  option(":value"="node.value") {{ node.name }}
       mt-field(v-model="formData.bankName" v-if="bankName=='other'" ":placeholder"="$root.i18n('Please input bank name')")
       form-errors(":errors"="$v.formData.bankName")
       template(v-if="checkFunctionEnable('branch')")
