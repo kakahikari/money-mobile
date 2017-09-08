@@ -25,16 +25,21 @@
           .mint-cell-value
             select.mint-field-core(v-model="bankName")
               option(value="") {{ $root.i18n('please select') }}
-              template(v-for="node in bankOpts")
+              template(v-for="node in localBankOpts" v-if="checkFunctionEnable('uselocalBankOpts')")
+                option(":value"="node.value") {{ node.name }}
+              template(v-for="node in bankOpts" v-else)
                 option(":value"="node.value") {{ node.name }}
       mt-field(v-model="formData.bankName" v-if="bankName=='other'" ":placeholder"="$root.i18n('Please input bank name')")
       form-errors(":errors"="$v.formData.bankName")
-      mt-field(":label"="$root.i18n('Branch')" v-model="formData.branch")
-      form-errors(":errors"="$v.formData.branch")
+      template(v-if="checkFunctionEnable('branch')")
+        mt-field(":label"="$root.i18n('Branch')" v-model="formData.branch")
+        form-errors(":errors"="$v.formData.branch")
       mt-field(":label"="$root.i18n('Bank account')" v-model="formData.account")
       form-errors(":errors"="$v.formData.account")
       mt-field(":label"="$root.i18n('Confirm bank ACC')" v-model="formData.checkAccount")
       form-errors(":errors"="$v.formData.checkAccount")
+      mt-field(":label"="$root.i18n('Bank ACC name')" v-model="formData.playername" ":readonly"="!checkFunctionEnable('playernameEditable')")
+      form-errors(":errors"="$v.formData.playername")
     .form__actions
       mt-button.form__actions__btn.submit(@click="action(formData)") {{ $root.i18n('Submit') }}
       mt-button.form__actions__btn(@click="init()") {{ $root.i18n('Reset') }}
@@ -45,7 +50,8 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import formErrors from '@/components/form-errors'
-  import { bankName, branch, account, checkPW } from '@/validators/config'
+  import { SITE_FUNCTIONS, BANK_OPTS } from '@/siteConfig'
+  import { bankName, branch, account, checkPW, playerName } from '@/validators/config'
   import { Field, Button, Indicator } from 'mint-ui'
   Vue.component(Field.name, Field)
   Vue.component(Button.name, Button)
@@ -63,7 +69,9 @@
           playername: '',
           account: '',
           checkAccount: ''
-        }
+        },
+        siteFunctions: SITE_FUNCTIONS,
+        localBankOpts: BANK_OPTS
       }
     },
 
@@ -128,6 +136,7 @@
         if (this.$v.$error) return
 
         Indicator.open()
+        if (formData.branch === '') formData.branch = 'nobranch'
         WalletService.create_bank({context: this, body: formData}).then((res) => {
           Indicator.close()
           this.$root.showToast({content: this.$root.i18n('success')})
@@ -140,6 +149,13 @@
       },
       toogleBankList () {
         this.bankListActive = !this.bankListActive
+      },
+      checkFunctionEnable (functionName) {
+        let target = this.siteFunctions.filter(node => node.name === 'bankcard')
+        if (!target.length > 0) return false
+        let targetFunction = target[0].functions.filter(node => node.name === functionName)
+        if (targetFunction.length > 0) return targetFunction[0].enable
+        return false
       }
     },
 
@@ -152,7 +168,8 @@
         bankName,
         branch,
         account,
-        checkAccount: checkPW('account')
+        checkAccount: checkPW('account'),
+        playername: playerName({})
       }
     }
   }
