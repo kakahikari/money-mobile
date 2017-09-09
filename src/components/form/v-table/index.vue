@@ -17,8 +17,8 @@
         <tr key="item">
           <td v-for="key in columnsKeys" :style="columns[key].style">
             <template v-if="key == 'status'">
-              <span v-if="nodes.status == 0">{{ $root.i18n('not validation') }}</span>
-              <span v-if="nodes.status == 1">{{ $root.i18n('validation') }}</span>
+              <span v-if="nodes.status == 0">{{ $root.i18n('un-validated') }}</span>
+              <span v-if="nodes.status == 1">{{ $root.i18n('validated') }}</span>
               <icon name='check' v-if="nodes.status == 3"></icon>
               <icon name='close' v-if="nodes.status == 2" class="error"></icon>
             </template>
