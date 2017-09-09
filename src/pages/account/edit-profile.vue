@@ -108,7 +108,7 @@
           mobile: this.user.mobile,
           qq: this.user.qq,
           wechat: this.user.wechat,
-          pin_bb: this.user.pin_bb,
+          pin_bb: this.user.pinbb,
           addr: this.user.addr,
           birthday: this.user.birthday
         }
