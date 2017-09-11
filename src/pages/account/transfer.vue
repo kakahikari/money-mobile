@@ -10,7 +10,7 @@
             icon(name="keyboard_arrow_up" v-else)
       transition(name="slideUp")
         .row(v-if="walletDetailsActive")
-          .info__item.gamegroup(v-for="node in walletDetails")
+          .info__item.gamegroup(v-for="node in displayWallet")
             .info__item__title {{ walletList[node.id] }}
             .info__item__val.money {{ node.balance.toString() | currency }}
     .form__fields
@@ -22,7 +22,7 @@
             select.mint-field-core(v-model="formData.from")
               option(value="") {{ $root.i18n('please select') }}
               option(":value"="centerWallet.id") {{ $root.i18n(walletList[centerWallet.id]) }}
-              template(v-for="node in walletDetails")
+              template(v-for="node in displayWallet")
                 option(":value"="node.id") {{ walletList[node.id] }}
       form-errors(":errors"="$v.formData.from")
       .mint-cell.mint-field
@@ -33,7 +33,7 @@
             select.mint-field-core(v-model="formData.to")
               option(value="") {{ $root.i18n('please select') }}
               option(":value"="centerWallet.id") {{ $root.i18n(walletList[centerWallet.id]) }}
-              template(v-for="node in walletDetails")
+              template(v-for="node in displayWallet")
                 option(":value"="node.id") {{ walletList[node.id] }}
       form-errors(":errors"="$v.formData.to")
       mt-field(":label"="$root.i18n('Amount')" v-model="formData.amount")
@@ -48,6 +48,7 @@
   import Vue from 'vue'
   import { mapState } from 'vuex'
   import formErrors from '@/components/form-errors'
+  import { GAME_GROUP } from '@/siteConfig'
   import { from, transferAmount, to } from '@/validators/config'
   import { Field, Button, Indicator } from 'mint-ui'
   import { walletList } from '@/xhrConfig'
@@ -59,6 +60,7 @@
 
     data () {
       return {
+        gamegroup: GAME_GROUP,
         walletList: walletList,
         walletDetailsActive: true,
         formData: {
@@ -80,6 +82,14 @@
       },
       walletDetails: state => {
         return state.WALLET.details.filter(node => node.id !== '0')
+      },
+      displayWallet: function () {
+        let target = this.walletDetails.filter((node) => {
+          let subTarget = this.gamegroup.filter(subnode => subnode.id === node.id)
+          if (subTarget.length > 0) return node
+          return []
+        })
+        return target
       }
     }),
 
