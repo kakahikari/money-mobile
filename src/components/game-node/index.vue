@@ -2,7 +2,7 @@
   .node
     .node__img(@click="play()")
       img(v-lazy="src")
-    .node__name {{ name }}
+    .node__name(v-html="name")
 </template>
 
 <script>

@@ -3,7 +3,7 @@
     h3.hot-games__legend {{ $root.i18n('Hot Games') }}
     .hot-games__content
       template(v-for="node in list")
-        node(v-bind="node"  ":groupId"="groupId" @no-blank="gameStart")
+        node(v-bind="node" ":groupId"="groupId" @no-blank="gameStart")
     a.no-blank(v-if="gameHref", ":href"="gameHref", target="_blank", @click="gameHref = ''")
       span {{ $root.i18n('Click to start game') }}
 </template>
