@@ -87,7 +87,6 @@
         let target = this.walletDetails.filter((node) => {
           let subTarget = this.gamegroup.filter(subnode => subnode.id === node.id)
           if (subTarget.length > 0) return node
-          return []
         })
         return target
       }
