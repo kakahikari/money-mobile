@@ -4,6 +4,7 @@
       <img src="static/images/maintenance.png">
       <h3>{{ $root.i18n('Under Maintenance') }}</h3>
       <h3>{{ $store.state.AUTH.isOutOfOrderMSG }}</h3>
+      <p class="version">v{{ VERSION }}</p>
     </aside>
     <aside class="loading-svg" v-else>
       <svg width="100%" height="100%" viewBox="0 0 120 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -37,6 +38,8 @@
 </template>
 
 <script>
+import { _VERSION } from 'src/version'
+
 export default {
   name: 'maintain-page',
 
@@ -46,7 +49,8 @@ export default {
       score: 0,
       underScore: 0,
       needScore: 4,
-      result: {}
+      result: {},
+      VERSION: _VERSION
     }
   },
 
@@ -60,15 +64,13 @@ export default {
 
       if (val + this.underScore >= this.needScore) {
         return window.setTimeout(() => {
-          this.onload = false
-          return this.onload
+          return (this.onload = false)
         }, 1200)
       }
     },
     underScore (val) {
       if (val + this.score >= this.needScore) {
-        this.onload = false
-        return this.onload
+        return (this.onload = false)
       }
     }
   },
@@ -92,13 +94,11 @@ export default {
       return this.$store.dispatch('checkOutOfOrder', {context: this}).then((res) => {
         this.score++
         this.underScore++
-        this.setOutOfOrder(res)
         if (res.status === 0) throw res
         this.getUserInfo()
         this.getGameGroup()
-      }).catch((err) => {
+      }).catch(() => {
         this.underScore += this.needScore
-        this.setOutOfOrder(err)
       })
     },
     async setOutOfOrder (res) {
@@ -116,13 +116,6 @@ export default {
         this.underScore++
       })
     },
-    // getServiceLink () {
-    //   return this.$store.dispatch('getServiceLink', {context: this}).then((res) => {
-    //     return this.score++
-    //   }).catch(() => {
-    //     this.underScore++
-    //   })
-    // },
     getGameGroup () {
       this.$store.dispatch('getGroup', {context: this}).then((res) => {
         return this.score++
@@ -130,13 +123,6 @@ export default {
         this.underScore++
       })
     }
-    // getShowBoxes () {
-    //   this.$store.dispatch('getBroadcasts', {context: this}).then((res) => {
-    //     return this.score++
-    //   }).catch(() => {
-    //     this.underScore++
-    //   })
-    // }
   }
 }
 </script>
